@@ -24,7 +24,7 @@ juice_extra_menu = [
     # { title = "Overview", link = "/" },
     # { title = "Community", link = "/community" },
     { title = "Docs ⍈", link = "https://peopleforbikes.github.io/docs" },
-    { title = "Github", link = "https://github.com/PeopleForBikes" }
+    { title = "Github ⍈", link = "https://github.com/PeopleForBikes" }
 ]
-site_description = "Insta is an enjoyable snapshot testing tool for Rust."
-repository_url = "https://github.com/huhu/juice"
+site_description = "PeopleForBikes community site."
+repository_url = "https://github.com/PeopleForBikes/PeopleForBikes.github.io"

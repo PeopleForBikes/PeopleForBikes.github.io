@@ -49,5 +49,5 @@ The following commit is a good example as:
 
 [draft pull request]: https://github.blog/2019-02-14-introducing-draft-pull-requests/
 [How to Write a Git Commit Message]: http://chris.beams.io/posts/git-commit
-[issue]: https://github.com/<org>/<project>/issues/new/choose
-[pull request]: https://github.com/<org>/<project>/pulls
+[issue]: https://github.com/PeopleForBikes/project/issues/new/choose
+[pull request]: https://github.com/PeopleForBikes/project/pulls

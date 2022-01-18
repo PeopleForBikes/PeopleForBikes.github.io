@@ -4,7 +4,6 @@ sort_by = "weight"
 date = 2022-01-17
 weight = 20
 +++
-
 # Tooling and library guidelines
 
 ## Goals
@@ -36,7 +35,7 @@ weight = 20
 * Projects dealing with data science must be written in Python.
 * All other projects must be written in Rust.
 
-## Python 
+## Python
 
 ### Libraries
 
@@ -84,7 +83,7 @@ poetry config virtualenvs.in-project true --local
 * [pytest]: python test framework
 * [pytest-cov]: code coverage plugin
 * [pytest-mock]: mock plugin
-* [pytest-rerunfailures]: retry plugins (used only for integration/feature 
+* [pytest-rerunfailures]: retry plugins (used only for integration/feature
   tests)
 * [pytest-socket]: prevents all network call from the tests
 * [pytest-xdist]: run the unit tests in parrallel
@@ -139,12 +138,12 @@ force_single_line = "true"
 
 * [markdownlint]: markdown linter
 
-## Rust 
+## Rust
 
 ### Libraries
 
 * [axum]: asynchronous HTTP server framework
-* [color-eyre]: error report handler 
+* [color-eyre]: error report handler
 * [clap]: elegant CLI
 * [indicatif]: progress reporting
 * [reqwest]: asynchronous HTTP client
