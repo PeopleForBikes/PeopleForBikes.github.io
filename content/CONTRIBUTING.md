@@ -2,14 +2,23 @@
 title = "Contributing"
 sort_by = "weight"
 date = 2022-01-17
-weight = 20
+weight = 30
 +++
 
-# Contributing Guidelines
+# Contributing
+
+## Guidelines
+
+These guidelines are general ones that apply globaly to all
+[PeopleForBikes](https://github.com/PeopleForBikes/) projects.
+
+However it is possible that individual projects have different or more
+specific reccomendations. If there is one, always refer to the `CONTRIBUTING.md`
+file in the reprository of the project you are working on.
 
 * Use the provided templates to file an [issue] or a [pull request].
 * Create a topic branch from where you want to base your work.
-* Format the files properly. Please use the dedicated `Makefile` targets.
+* Format the files properly. Please use the dedicated task runner if any.
 * If applicable, add some tests to validate your changes and ensure nothing
   else was accidentally broken.
 * Commit messages must start with a capitalized and short summary
