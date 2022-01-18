@@ -5,7 +5,7 @@ date = 2022-01-17
 weight = 20
 +++
 
-# Contributor Covenant Code of Conduct
+# Code of Conduct
 
 ## Our Pledge
 
