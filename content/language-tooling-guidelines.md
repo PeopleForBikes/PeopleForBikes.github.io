@@ -2,19 +2,58 @@
 title = "Tooling"
 sort_by = "weight"
 date = 2022-01-17
-weight = 20
+weight = 50
 +++
 # Tooling and library guidelines
 
 ## Goals
 
-* Consistency
-* Removing choice fatigue
-* Limiting dependency proliferation
+### Consistency
 
-## Concepts
+We want to ensure consistency in the tools and libraries used for the
+[PeopleForBikes] projects.
 
-* Libraries are not set in stone
+Ideally a contributor working on one project should be familiar enough with the
+tools and libraries to be able to fix bugs or implement features in another one.
+
+### Removing choice fatigue
+
+We aim at preventing choice fatigue by working with tools and libraries that we
+already battle tested.
+
+For instance a contributor looking to implement some logging in a new project
+should not spend a day or two researching and evaluating libraries, but should
+instead refer to this guide to pick the one we reccomend.
+
+### Limiting dependency proliferation
+
+Limiting the amount of third-party software you rely on reduces the surface of
+attacks you may be vulnerable to.
+
+Here as an example, are just a couple of impactful events that happen within
+recent years:
+
+* [Malicious code found in npm package event-stream](https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/)
+* [Open Source Developer Intentionally Corrupts NPM Libraries](https://www.cpomagazine.com/cyber-security/open-source-developer-intentionally-corrupts-npm-libraries-suspected-hack-turns-out-to-be-mischief/)
+* [GitHub Confirms Another Major NPM Security Defect](https://www.securityweek.com/github-confirms-another-major-npm-security-defect)
+
+## Languages
+
+Like dependencies, we try to reduce the amount of general-purpose programming
+languages we use for [PeopleForBikes] projects, therefore we decided to only
+adopt [Rust] and [Python].
+
+They are respectively used for the following use cases:
+
+* Projects dealing with data science must be written in Python.
+* All other projects must be written in Rust.
+
+## General Concepts
+
+These are general concepts that we attempt to abid to in the [PeopleForBikes]
+projects.
+
+* Recomended libraries are not set in stone
   * Possible to add librairies if they meet pre-defined criterias
     * Active project
       * Response to issues, PR within a reasonable timeframe (1-2 weeks)
@@ -30,21 +69,14 @@ weight = 20
 * Use linters with default configurations
   * Unless there is an absolute need for a change
 
-## Languages
-
-* Projects dealing with data science must be written in Python.
-* All other projects must be written in Rust.
-
 ## Python
 
-### Libraries
-
-#### Project management
+### Project management
 
 * [poetry]: Python project management de facto standard
 * [invoke]: Pure python task runner
 
-##### Poetry settings
+### Poetry settings
 
 Each project must create a local virtual environment at its root :
 
@@ -52,7 +84,49 @@ Each project must create a local virtual environment at its root :
 poetry config virtualenvs.in-project true --local
 ```
 
-#### Development
+### pyproject.toml
+
+Describes special sections to add to the `pyproject.toml` configuration file.
+
+```toml
+[tool.isort]
+profile = "black"
+force_single_line = "true"
+```
+
+### Initialization
+
+To quickly start a project, run the following commands:
+
+```bash
+POETRY_PROJECT=my-project
+poetry new ${POETRY_PROJECT}
+cd ${POETRY_PROJECT}
+poetry add -D \
+  black \
+  bpython \
+  flake8 \
+  furo\
+  invoke \
+  isort \
+  myst-parser \
+  pydocstyle \
+  pylint \
+  pytest \
+  pytest-cov \
+  pytest-mock \
+  pytest-rerunfailures \
+  pytest-socket \
+  pytest-xdist \
+  Sphinx\
+  sphinx-autobuild \
+  sphinx-copybutton \
+  xdoctest
+```
+
+### Libraries
+
+#### Production
 
 * [aiohttp]: asynchronous HTTP Client/Server
 * [alive-progress]: progress reporting
@@ -88,52 +162,6 @@ poetry config virtualenvs.in-project true --local
 * [pytest-socket]: prevents all network call from the tests
 * [pytest-xdist]: run the unit tests in parrallel
 
-### Initialization
-
-To quickly start a project, run the following commands:
-
-```bash
-POETRY_PROJECT=my-project
-poetry new ${POETRY_PROJECT}
-cd ${POETRY_PROJECT}
-poetry add \
-  aiohttp \
-  pydantic \
-  loguru \
-  tenacity \
-  typer
-poetry add -D \
-  black \
-  bpython \
-  flake8 \
-  furo\
-  invoke \
-  isort \
-  myst-parser \
-  pydocstyle \
-  pylint \
-  pytest \
-  pytest-cov \
-  pytest-mock \
-  pytest-rerunfailures \
-  pytest-socket \
-  pytest-xdist \
-  Sphinx\
-  sphinx-autobuild \
-  sphinx-copybutton \
-  xdoctest
-```
-
-### pyproject.toml
-
-Describes special sections to add to the `pyproject.toml` configuration file.
-
-```toml
-[tool.isort]
-profile = "black"
-force_single_line = "true"
-```
-
 ## Markdown
 
 * [markdownlint]: markdown linter
@@ -161,6 +189,11 @@ force_single_line = "true"
 
 * [sqlfluff]: SQL linter and formatter
 
+## Tooling
+
+* [just]: General purpose task runner
+
+<!-- Dependecy links -->
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum
 [aiohttp]: https://docs.aiohttp.org/en/stable/
@@ -198,3 +231,11 @@ force_single_line = "true"
 [tracing.rs]: https://tracing.rs/tracing/
 [tokio]: https://tokio.rs/
 [typer]: https://typer.tiangolo.com/
+
+<!-- Tooling -->
+[just]: https://github.com/casey/just
+
+<!-- General links -->
+[PeopleForBikes]: https://github.com/PeopleForBikes
+[Python]: https://www.python.org/
+[Rust]: https://www.rust-lang.org/
