@@ -12,6 +12,6 @@ people riding bikes more often, and make bike riding better for everyone.
 
 Our projects:
 
-* [retrieve](http://example.com/): Simplify downloading PeopleForBikes dataset
-* [svggloo](http://example.com/): Render SVG templates
-* [measure](http://example.com/): Quantify and identify bike lanes in cities
+* [retrieve](https://github.com/PeopleForBikes/retrieve): Simplify downloading PeopleForBikes dataset
+* [svggloo](https://github.com/PeopleForBikes/svggloo): Render SVG templates
+* [measure](https://github.com/orgs/PeopleForBikes/repositories?q=&type=all&language=&sort=): Quantify and identify bike lanes in cities
