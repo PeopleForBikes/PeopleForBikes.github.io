@@ -2,49 +2,82 @@
 title = "Tooling"
 sort_by = "weight"
 date = 2022-01-17
-weight = 20
+weight = 50
 +++
+
 # Tooling and library guidelines
 
 ## Goals
 
-* Consistency
-* Removing choice fatigue
-* Limiting dependency proliferation
+### Consistency
 
-## Concepts
+We want to ensure consistency in the tools and libraries used for the
+[PeopleForBikes] projects.
 
-* Libraries are not set in stone
-  * Possible to add librairies if they meet pre-defined criterias
-    * Active project
-      * Response to issues, PR within a reasonable timeframe (1-2 weeks)
-      * At least one commit within the past 6 months
-    * No known vulnerabilities
-    * Well enough documented
-      * i.e. no tribal knowledge required to use them
-    * Solve a problem
-  * Replacing/Removing a library is possible too
-    * Propose a new valid alternative
-    * Propose a replacement and/or deprecation strategy
-      * e.g. not all projects need to migrate, only new and very active ones
-* Use linters with default configurations
-  * Unless there is an absolute need for a change
+Ideally a contributor working on one project should be familiar enough with the
+tools and libraries to be able to fix bugs or implement features in another one.
+
+### Removing choice fatigue
+
+We aim at preventing choice fatigue by working with tools and libraries that we
+already battle tested.
+
+For instance a contributor looking to implement some logging in a new project
+should not spend a day or two researching and evaluating libraries, but should
+instead refer to this guide to pick the one we reccomend.
+
+### Limiting dependency proliferation
+
+Limiting the amount of third-party software you rely on reduces the surface of
+attacks you may be vulnerable to.
+
+Here as an example, are just a couple of impactful events that happen within
+recent years:
+
+- [Malicious code found in npm package event-stream](https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/)
+- [Open Source Developer Intentionally Corrupts NPM Libraries](https://www.cpomagazine.com/cyber-security/open-source-developer-intentionally-corrupts-npm-libraries-suspected-hack-turns-out-to-be-mischief/)
+- [GitHub Confirms Another Major NPM Security Defect](https://www.securityweek.com/github-confirms-another-major-npm-security-defect)
 
 ## Languages
 
-* Projects dealing with data science must be written in Python.
-* All other projects must be written in Rust.
+Like dependencies, we try to reduce the amount of general-purpose programming
+languages we use for [PeopleForBikes] projects, therefore we decided to only
+adopt [Rust] and [Python].
+
+They are respectively used for the following use cases:
+
+- Projects dealing with data science must be written in Python.
+- All other projects must be written in Rust.
+
+## General Concepts
+
+These are general concepts that we attempt to abid to in the [PeopleForBikes]
+projects.
+
+- Recomended libraries are not set in stone
+  - Possible to add librairies if they meet pre-defined criterias
+    - Active project
+      - Response to issues, PR within a reasonable timeframe (1-2 weeks)
+      - At least one commit within the past 6 months
+    - No known vulnerabilities
+    - Well enough documented
+      - i.e. no tribal knowledge required to use them
+    - Solve a problem
+  - Replacing/Removing a library is possible too
+    - Propose a new valid alternative
+    - Propose a replacement and/or deprecation strategy
+      - e.g. not all projects need to migrate, only new and very active ones
+- Use linters with default configurations
+  - Unless there is an absolute need for a change
 
 ## Python
 
-### Libraries
+### Project management
 
-#### Project management
+- [poetry]: Python project management de facto standard
+- [invoke]: Pure python task runner
 
-* [poetry]: Python project management de facto standard
-* [invoke]: Pure python task runner
-
-##### Poetry settings
+### Poetry settings
 
 Each project must create a local virtual environment at its root :
 
@@ -52,41 +85,15 @@ Each project must create a local virtual environment at its root :
 poetry config virtualenvs.in-project true --local
 ```
 
-#### Development
+### pyproject.toml
 
-* [aiohttp]: asynchronous HTTP Client/Server
-* [alive-progress]: progress reporting
-* [loguru]: logging made (stupidly) simple
-* [pydantic]: models, settings and automated serialization/deserialization
-* [tenacity]: advanced retry library
-* [typer]: CLI made easy
+Describes special sections to add to the `pyproject.toml` configuration file.
 
-#### Linting
-
-* [black]: the uncompromising Python code formatter
-* [flake8]: style guide enforcement
-* [isort]: sorts your imports
-* [pydocstyle]: ensure compliance with Python docstring conventions
-* [pylint]: python linter
-
-#### Docs
-
-* [furo]: a clean customisable Sphinx documentation theme.
-* [myst-parser]: extend Sphinx with the power of markdown
-* [sphinx]: beautiful documentation made easy
-* [sphinx-autobuild]: hot reloading for Sphinx
-* [sphinx-copybutton]: s small sphinx extension to add a "copy" button to code
-  blocks
-
-#### Testing
-
-* [pytest]: python test framework
-* [pytest-cov]: code coverage plugin
-* [pytest-mock]: mock plugin
-* [pytest-rerunfailures]: retry plugins (used only for integration/feature
-  tests)
-* [pytest-socket]: prevents all network call from the tests
-* [pytest-xdist]: run the unit tests in parrallel
+```toml
+[tool.isort]
+profile = "black"
+force_single_line = "true"
+```
 
 ### Initialization
 
@@ -96,12 +103,6 @@ To quickly start a project, run the following commands:
 POETRY_PROJECT=my-project
 poetry new ${POETRY_PROJECT}
 cd ${POETRY_PROJECT}
-poetry add \
-  aiohttp \
-  pydantic \
-  loguru \
-  tenacity \
-  typer
 poetry add -D \
   black \
   bpython \
@@ -124,42 +125,76 @@ poetry add -D \
   xdoctest
 ```
 
-### pyproject.toml
+### Libraries
 
-Describes special sections to add to the `pyproject.toml` configuration file.
+#### Production
 
-```toml
-[tool.isort]
-profile = "black"
-force_single_line = "true"
-```
+- [aiohttp]: asynchronous HTTP Client/Server
+- [alive-progress]: progress reporting
+- [loguru]: logging made (stupidly) simple
+- [pydantic]: models, settings and automated serialization/deserialization
+- [tenacity]: advanced retry library
+- [typer]: CLI made easy
+
+#### Linting
+
+- [black]: the uncompromising Python code formatter
+- [flake8]: style guide enforcement
+- [isort]: sorts your imports
+- [pydocstyle]: ensure compliance with Python docstring conventions
+- [pylint]: python linter
+
+#### Docs
+
+- [furo]: a clean customisable Sphinx documentation theme.
+- [myst-parser]: extend Sphinx with the power of markdown
+- [sphinx]: beautiful documentation made easy
+- [sphinx-autobuild]: hot reloading for Sphinx
+- [sphinx-copybutton]: s small sphinx extension to add a "copy" button to code
+  blocks
+
+#### Testing
+
+- [pytest]: python test framework
+- [pytest-cov]: code coverage plugin
+- [pytest-mock]: mock plugin
+- [pytest-rerunfailures]: retry plugins (used only for integration/feature
+  tests)
+- [pytest-socket]: prevents all network call from the tests
+- [pytest-xdist]: run the unit tests in parrallel
 
 ## Markdown
 
-* [markdownlint]: markdown linter
+- [markdownlint]: markdown linter
 
 ## Rust
 
 ### Libraries
 
-* [axum]: asynchronous HTTP server framework
-* [color-eyre]: error report handler
-* [clap]: elegant CLI
-* [indicatif]: progress reporting
-* [reqwest]: asynchronous HTTP client
-* [serde]: serialization/desrialization framework
-* [seaorm]: async & dynamic ORM
-* [tokio]: asynchronous runtime
-* [tracing.rs]: a scoped, structured logging and diagnostics system
+- [axum]: asynchronous HTTP server framework
+- [color-eyre]: error report handler
+- [clap]: elegant CLI
+- [indicatif]: progress reporting
+- [reqwest]: asynchronous HTTP client
+- [serde]: serialization/desrialization framework
+- [seaorm]: async & dynamic ORM
+- [tokio]: asynchronous runtime
+- [tracing.rs]: a scoped, structured logging and diagnostics system
 
 ## Shell
 
-* [shellcheck]: shell linter
-* [shfmt]: shell formatter
+- [shellcheck]: shell linter
+- [shfmt]: shell formatter
 
 ## SQL
 
-* [sqlfluff]: SQL linter and formatter
+- [sqlfluff]: SQL linter and formatter
+
+## Tooling
+
+- [just]: General purpose task runner
+
+<!-- Dependecy links -->
 
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum
@@ -198,3 +233,13 @@ force_single_line = "true"
 [tracing.rs]: https://tracing.rs/tracing/
 [tokio]: https://tokio.rs/
 [typer]: https://typer.tiangolo.com/
+
+<!-- Tooling -->
+
+[just]: https://github.com/casey/just
+
+<!-- General links -->
+
+[peopleforbikes]: https://github.com/PeopleForBikes
+[python]: https://www.python.org/
+[rust]: https://www.rust-lang.org/

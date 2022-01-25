@@ -2,29 +2,29 @@
 {% block hero %}
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <section class="text-center welcome">
-    <h1 class="heading-text" style="font-size: 50px">PeopleForBikes</h1>
-    <h3 class="title-text">
-        Better riding for everyone.
-    </h3>
-    <p>
-        <a class="github-button" href="https://github.com/PeopleForBikes/svggloo" data-size="large"
-            data-show-count="true" aria-label="Star PeopleForBikes/svggloo on GitHub">Star</a>
-    </p>
+  <h1 class="heading-text">grok biking safety, nationwide</h1>
+  <h3 class="title-text">
+    Technology that helps _____
+  </h3>
+  <p>
+    <a class="github-button" href="https://github.com/PeopleForBikes/PeopleForBikes.github.io" data-size="large"
+      data-show-count="true" aria-label="Star PeopleForBikes/PeopleForBikes.github.io on GitHub">Star</a>
+  </p>
 </section>
 <img class="hero-image" style="width: 35%" src="{{ get_url(path="pfb-small.png") }}">
 
 <div class="explore-more text" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">Learn
-    More ⇣</div>
+  More ⇣</div>
 {% endblock hero %}
 
 {% block content %}
-    {{ section.content | safe }}
+{{ section.content | safe }}
 {% endblock content %}
 
 {% block footer %}
 <footer>
-    <small class="subtext">
-        Created by <a href="https://www.peopleforbikes.org/">PeopleForBikes</a>
-    </small>
+  <small class="subtext">
+    Created by <a href="https://www.peopleforbikes.org/">PeopleForBikes</a>
+  </small>
 </footer>
 {% endblock footer %}

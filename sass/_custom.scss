@@ -1,0 +1,113 @@
+h1,
+.title-text {
+  font-size: 1.75rem;
+  margin-bottom: 40px;
+}
+
+h2,
+.subtitle-text {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+.text {
+  font-size: 1rem;
+}
+
+header {
+  .logo {
+    margin-left: 0 !important;
+    font-family: Montserrat !important;
+    font-weight: bold !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      text-align: center;
+    }
+  }
+
+  .nav-item {
+    font-family: Montserrat;
+    font-weight: normal !important;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+}
+
+.hero {
+  padding-top: 55px !important;
+  padding-bottom: 55px !important;
+
+  @media screen and (max-width: 768px) {
+    .welcome {
+      max-width: none !important;
+    }
+  }
+  .welcome {
+    max-width: 50% !important;
+
+    .heading-text {
+      font-family: "Dharma Gothic E";
+      font-size: 5.5rem;
+      text-transform: uppercase !important;
+      padding: 0;
+      margin-bottom: -15px;
+      color: white;
+    }
+
+    .title-text {
+      font-family: "Dharma Gothic E";
+      font-size: 3rem;
+      color: white;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-image {
+      display: none;
+    }
+  }
+
+  .hero-image {
+    width: 25% !important;
+  }
+
+  .explore-more {
+    bottom: 0px !important;
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+}
+
+main {
+  padding-right: 80px !important;
+  padding-left: 80px !important;
+
+  .subtext {
+    font-weight: bold;
+  }
+
+  .content.text {
+    #overview {
+      display: none;
+    }
+
+    p:first-of-type {
+      margin-top: 0 !important;
+    }
+
+    ul {
+      margin-top: 0 !important;
+
+      li {
+        padding: 0 !important;
+      }
+    }
+  }
+}
