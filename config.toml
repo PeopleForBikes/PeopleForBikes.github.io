@@ -18,13 +18,13 @@ highlight_theme = "inspired-github"
 
 [extra]
 # Put all your custom variables here
-juice_logo_name = "PeopleForBikes"
+juice_logo_name = "PeopleForBikes Tech"
 juice_logo_path = "logo_pfb.svg"
 juice_extra_menu = [
     # { title = "Overview", link = "/" },
     # { title = "Community", link = "/community" },
-    { title = "Docs ⍈", link = "https://peopleforbikes.github.io/docs" },
-    { title = "Github ⍈", link = "https://github.com/PeopleForBikes" }
+    { title = "Docs ↗", link = "https://peopleforbikes.github.io/docs" },
+    { title = "Github ↗", link = "https://github.com/PeopleForBikes" }
 ]
 site_description = "PeopleForBikes community site."
 repository_url = "https://github.com/PeopleForBikes/PeopleForBikes.github.io"
