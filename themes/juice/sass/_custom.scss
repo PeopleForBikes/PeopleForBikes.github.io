@@ -22,6 +22,7 @@ header {
     margin-left: 0;
     font-family: var(--fonts-body);
     font-weight: bold;
+    color: white;
   }
 
   @media screen and (max-width: 768px) {
@@ -80,8 +81,6 @@ header {
 
   .explore-more {
     bottom: 0px !important;
-    pointer-events: none !important;
-    cursor: default !important;
   }
 }
 
