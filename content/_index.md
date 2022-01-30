@@ -11,7 +11,7 @@ million individual riders to promote stronger representation in congress and
 coordinated advocacy programs and help develop and promote economic policies
 that benefit bike businesses.
 
-**[PeopleForBikes Tech](http://example.com/)** is PFB's technical arm. We aim to
+**PeopleForBikes Tech** is PFB's technical arm. We aim to
 simplify and automate tasks to help our advocates focus on what they do best:
 get more people riding bikes more often, and make bike riding better for
 everyone.
@@ -21,5 +21,4 @@ Our projects:
 - [retrieve](https://github.com/PeopleForBikes/retrieve): Simplify downloading
   PeopleForBikes dataset
 - [svggloo](https://github.com/PeopleForBikes/svggloo): Render SVG templates
-- [measure](https://github.com/orgs/PeopleForBikes/repositories?q=&type=all&language=&sort=):
-  Quantify and identify bike lanes in cities
+- measure: Quantify and identify bike lanes in cities
