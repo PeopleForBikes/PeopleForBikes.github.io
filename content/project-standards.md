@@ -40,6 +40,9 @@ The CI rules:
 - Developpers must be able to run the tasks locally.
 - The CI acts as the source of truth.
 
+The `PeopleForBikes/.github` repository contains starter workflows that should
+be used when creating a project.
+
 ### Required tasks
 
 - Formatter
@@ -62,3 +65,61 @@ The CI rules:
   - Think about your teammates who worked on increasing this coverage
   - Use online services like [coveralls](https://coveralls.io) or
     [codecov](https://codecov.io)
+
+## Administrative tasks
+
+### Create a new GitHub repository
+
+> **Remark: this operation can only be performed by administrators.**
+
+We recomend using using the [GitHub CLI](https://cli.github.com/) in general as
+we find it very convenient, but even if it is not your cup of tea, it should at
+least be used to create new repositories with the right parameters from the get
+go.
+
+Start by assigning the repository name to the `PFB_REPO` variable:
+
+```bash
+export PFB_REPO=my-project
+```
+
+Create the repository:
+
+> **Remark: adjust the `--description` and `--gitignore` flags with the
+> appropriate values.**
+
+```bash
+gh repo create \
+  "PeopleForBikes/${PFB_REPO}" \
+  --public \
+  --clone \
+  --license MIT \
+  --description "Describe my project in one line." \
+  --gitignore Rust
+cd "${PFB_REPO}"
+```
+
+After that, import the `.github` directory:
+
+```bash
+DOT_GITHUB_TMP="$(mktemp -d)/.github"
+git clone --depth=1 git@github.com:PeopleForBikes/.github "${DOT_GITHUB_TMP}"
+rsync -vrlp --exclude '.git' "${DOT_GITHUB_TMP}" .
+```
+
+> **Remark: check the `.github/workflows` folder and remove the workflows that
+> do not pertain to the project.**
+
+Then apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
+
+```bash
+labelr --organization PeopleForBikes --sync .github/labels
+```
+
+And finally submit the changes:
+
+```bash
+git add .
+git commit -am "Initial import" -m "Imports project scaffolding."
+git push
+```

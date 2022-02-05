@@ -11,10 +11,9 @@ million individual riders to promote stronger representation in congress and
 coordinated advocacy programs and help develop and promote economic policies
 that benefit bike businesses.
 
-**PeopleForBikes Tech** is PFB's technical arm. We aim to
-simplify and automate tasks to help our advocates focus on what they do best:
-get more people riding bikes more often, and make bike riding better for
-everyone.
+**PeopleForBikes Tech** is PFB's technical arm. We aim to simplify and automate
+tasks to help our advocates focus on what they do best: get more people riding
+bikes more often, and make bike riding better for everyone.
 
 Our projects:
 
