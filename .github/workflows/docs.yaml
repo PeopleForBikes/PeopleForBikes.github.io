@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: build
-        uses: shalzz/zola-deploy-action@v0.14.1
+        uses: shalzz/zola-deploy-action@v0.15.3
         env:
           BUILD_DIR: .
           BUILD_ONLY: true
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: build
-        uses: shalzz/zola-deploy-action@v0.14.1
+        uses: shalzz/zola-deploy-action@v0.15.3
         env:
           BUILD_DIR: .
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
