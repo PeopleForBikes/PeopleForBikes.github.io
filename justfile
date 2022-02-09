@@ -4,15 +4,19 @@ sass_files := "themes/juice/sass/_custom_*.scss"
 ci: lint
 
 # Meta task running all the linters at once.
-lint: lint-md lint-sass
+lint: lint-md lint-sass lint-spelling
+
+# Lint markown files, ignoring the content of the themes.
+lint-md:
+  npx --yes markdownlint-cli2 "**/*.md" "#themes"
 
 # Lint sass files.
 lint-sass:
   npx --yes prettier --check {{sass_files}}
 
-# Lint markown files, ignoring the content of the themes.
-lint-md:
-  npx --yes markdownlint-cli2 "**/*.md" "#themes"
+# Check spelling.
+lint-spelling:
+  npx --yes cspell --no-progress --show-suggestions --show-context "content/**/*.md"
 
 # Meta tasks running all formatters at once.
 fmt: fmt-md fmt-sass

@@ -1,0 +1,26 @@
+# PeopleForBikes Words
+autobuild
+bpython
+codecov
+copybutton
+deserialization
+EDITMSG
+furo
+isort
+justfile
+labelr
+mktemp
+PFB's
+pydocstyle
+pylint
+pyproject
+pytest
+rerunfailures
+scrapd
+socio
+svggloo
+timeframe
+virtualenvs
+vrlp
+xdist
+xdoctest
