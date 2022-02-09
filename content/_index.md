@@ -20,4 +20,5 @@ Our projects:
 - [retrieve](https://github.com/PeopleForBikes/retrieve): Simplify downloading
   PeopleForBikes dataset
 - [svggloo](https://github.com/PeopleForBikes/svggloo): Render SVG templates
-- measure: Quantify and identify bike lanes in cities
+- [measure](https://github.com/PeopleForBikes/measure): Quantify and identify
+  bike lanes in cities
