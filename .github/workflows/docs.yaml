@@ -15,10 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: extractions/setup-just@v1
-      - name: lint sass
+      - name: Lint sass
         run: just lint-sass
-      - name: lint markdown
+      - name: Lint markdown
         run: just lint-md
+      - name: Check spelling
+        run: just lint-spelling
 
   docs:
     runs-on: ubuntu-latest

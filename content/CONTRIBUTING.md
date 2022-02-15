@@ -9,12 +9,12 @@ weight = 30
 
 ## Guidelines
 
-These guidelines are general ones that apply globaly to all
+These guidelines are general ones that apply globally to all
 [PeopleForBikes](https://github.com/PeopleForBikes/) projects.
 
 However it is possible that individual projects have different or more specific
-reccomendations. If there is one, always refer to the `CONTRIBUTING.md` file in
-the reprository of the project you are working on.
+recommendations. If there is one, always refer to the `CONTRIBUTING.md` file in
+the repository of the project you are working on.
 
 - Use the provided templates to file an [issue] or a [pull request].
 - Create a topic branch from where you want to base your work.
