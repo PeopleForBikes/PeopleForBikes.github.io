@@ -1,5 +1,5 @@
 +++
-title = "Tooling"
+title = "Guidelines"
 sort_by = "weight"
 date = 2022-01-17
 weight = 50
@@ -24,7 +24,7 @@ already battle tested.
 
 For instance a contributor looking to implement some logging in a new project
 should not spend a day or two researching and evaluating libraries, but should
-instead refer to this guide to pick the one we reccomend.
+instead refer to this guide to pick the one we recommend.
 
 ### Limiting dependency proliferation
 
@@ -51,11 +51,11 @@ They are respectively used for the following use cases:
 
 ## General Concepts
 
-These are general concepts that we attempt to abid to in the [PeopleForBikes]
+These are general concepts that we attempt to abide to in the [PeopleForBikes]
 projects.
 
-- Recomended libraries are not set in stone
-  - Possible to add librairies if they meet pre-defined criterias
+- Recommended libraries are not set in stone
+  - Possible to add libraries if they meet pre-defined criteria
     - Active project
       - Response to issues, PR within a reasonable timeframe (1-2 weeks)
       - At least one commit within the past 6 months
@@ -146,7 +146,7 @@ poetry add -D \
 
 #### Docs
 
-- [furo]: a clean customisable Sphinx documentation theme.
+- [furo]: a clean customizable Sphinx documentation theme.
 - [myst-parser]: extend Sphinx with the power of markdown
 - [sphinx]: beautiful documentation made easy
 - [sphinx-autobuild]: hot reloading for Sphinx
@@ -161,7 +161,7 @@ poetry add -D \
 - [pytest-rerunfailures]: retry plugins (used only for integration/feature
   tests)
 - [pytest-socket]: prevents all network call from the tests
-- [pytest-xdist]: run the unit tests in parrallel
+- [pytest-xdist]: run the unit tests in parallel
 
 ## Markdown
 
@@ -176,7 +176,7 @@ poetry add -D \
 - [clap]: elegant CLI
 - [indicatif]: progress reporting
 - [reqwest]: asynchronous HTTP client
-- [serde]: serialization/desrialization framework
+- [serde]: serialization/deserialization framework
 - [seaorm]: async & dynamic ORM
 - [tokio]: asynchronous runtime
 - [tracing.rs]: a scoped, structured logging and diagnostics system
@@ -194,7 +194,7 @@ poetry add -D \
 
 - [just]: General purpose task runner
 
-<!-- Dependecy links -->
+<!-- Dependency links -->
 
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum

@@ -7,7 +7,7 @@ weight = 40
 
 # Project standards
 
-## General recomendations
+## General recommendations
 
 - Projects must provide a way to build artifacts using standard tools (i.e. no
   custom scripts made for a specific machine/environment)
@@ -37,7 +37,7 @@ weight = 40
 The CI rules:
 
 - Projects must comply with CI task requirements.
-- Developpers must be able to run the tasks locally.
+- Developers must be able to run the tasks locally.
 - The CI acts as the source of truth.
 
 The `PeopleForBikes/.github` repository contains starter workflows that should
@@ -55,7 +55,7 @@ be used when creating a project.
 - Feature tests
   - Try to cover 100% of use cases
     - This is more important than the unit test coverage
-    - It will end up increasing unit test coverage anywway
+    - It will end up increasing unit test coverage anyway
 - Integration tests
   - Can use network, database, file system, storage, etc.
   - **Are NOT included in the code coverage**
@@ -72,7 +72,7 @@ be used when creating a project.
 
 > **Remark: this operation can only be performed by administrators.**
 
-We recomend using using the [GitHub CLI](https://cli.github.com/) in general as
+We recommend using using the [GitHub CLI](https://cli.github.com/) in general as
 we find it very convenient, but even if it is not your cup of tea, it should at
 least be used to create new repositories with the right parameters from the get
 go.
