@@ -33,30 +33,30 @@ header {
 
   .nav-item {
     font-family: var(--fonts-body);
-    font-weight: normal !important;
+    font-weight: normal ;
 
     &:hover {
-      color: white !important;
+      color: white ;
     }
   }
 }
 
 .hero {
-  padding-top: 55px !important;
-  padding-bottom: 55px !important;
+  padding-top: 55px ;
+  padding-bottom: 55px ;
 
   @media screen and (max-width: 768px) {
     .welcome {
-      max-width: none !important;
+      max-width: none ;
     }
   }
   .welcome {
-    max-width: 50% !important;
+    // max-width: 50% ;
 
     .heading-text {
       font-family: var(--fonts-headlines);
-      font-size: 5.5rem;
-      text-transform: uppercase !important;
+      font-size: 3.5rem;
+      text-transform: uppercase ;
       padding: 0;
       margin-bottom: -15px;
       color: white;
@@ -76,17 +76,17 @@ header {
   }
 
   .hero-image {
-    width: 25% !important;
+    width: 25% ;
   }
 
   .explore-more {
-    bottom: 0px !important;
+    bottom: 0px ;
   }
 }
 
 main {
-  padding-right: 80px !important;
-  padding-left: 80px !important;
+  padding-right: 80px ;
+  padding-left: 80px ;
 
   .subtext {
     font-weight: bold;
@@ -98,14 +98,14 @@ main {
     }
 
     p:first-of-type {
-      margin-top: 0 !important;
+      margin-top: 0 ;
     }
 
     ul {
-      margin-top: 0 !important;
+      margin-top: 0 ;
 
       li {
-        padding: 0 !important;
+        padding: 0 ;
       }
     }
   }
