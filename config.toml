@@ -8,7 +8,7 @@ compile_sass = true
 build_search_index = true
 
 theme = "juice"
-title = "PeopleForBikes Tech"
+title = "BNA Mechanics"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -18,7 +18,7 @@ highlight_theme = "inspired-github"
 
 [extra]
 # Put all your custom variables here
-juice_logo_name = "PeopleForBikes Tech"
+juice_logo_name = "BNA Mechanics"
 juice_logo_path = "logo_pfb.svg"
 juice_extra_menu = [
     { title = "Github ↗", link = "https://github.com/PeopleForBikes" }
