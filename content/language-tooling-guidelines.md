@@ -89,10 +89,34 @@ poetry config virtualenvs.in-project true --local
 
 Describes special sections to add to the `pyproject.toml` configuration file.
 
+#### coverage
+
+Leaves some files out the measurements.
+
+```toml
+[tool.coverage.run]
+omit = ["*/__init__.py"]
+```
+
+#### isort
+
+Enables the compatibility with black and ensure each import has its own line.
+
 ```toml
 [tool.isort]
 profile = "black"
 force_single_line = "true"
+```
+
+#### pytest
+
+Removes the warnings, configures the code coverage report and run the doctests
+with [xdoctest].
+
+```toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-p no:warnings --cov-report term-missing --cov-report html --xdoctest"
 ```
 
 ### Initialization
@@ -162,6 +186,7 @@ poetry add -D \
   tests)
 - [pytest-socket]: prevents all network call from the tests
 - [pytest-xdist]: run the unit tests in parallel
+- [xdoctest]: better doctest
 
 ## Markdown
 
@@ -233,6 +258,7 @@ poetry add -D \
 [tracing.rs]: https://tracing.rs/tracing/
 [tokio]: https://tokio.rs/
 [typer]: https://typer.tiangolo.com/
+[xdoctest]: https://github.com/Erotemic/xdoctest
 
 <!-- Tooling -->
 
