@@ -1,14 +1,18 @@
 # PeopleForBikes Words
+addopts
 autobuild
 bpython
 codecov
 copybutton
 deserialization
+doctest
+doctests
 EDITMSG
 furo
 isort
 justfile
 labelr
+minversion
 mktemp
 PFB's
 pydocstyle
