@@ -157,6 +157,7 @@ poetry add -D \
 - [alive-progress]: progress reporting
 - [loguru]: logging made (stupidly) simple
 - [pydantic]: models, settings and automated serialization/deserialization
+- [rich]: rich text and beautiful formatting in the terminal
 - [tenacity]: advanced retry library
 - [typer]: CLI made easy
 
@@ -246,6 +247,7 @@ poetry add -D \
 [pytest-xdist]: https://github.com/pytest-dev/pytest-xdist
 [pytest]: https://docs.pytest.org/en/latest/
 [reqwest]: https://github.com/seanmonstar/reqwest
+[rich]: https://github.com/Textualize/rich
 [seaorm]: https://www.sea-ql.org/SeaORM/
 [serde]: https://serde.rs/
 [shellcheck]: https://github.com/koalaman/shellcheck
