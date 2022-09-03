@@ -100,12 +100,13 @@ omit = ["*/__init__.py"]
 
 #### isort
 
-Enables the compatibility with black and ensure each import has its own line.
+Enables the compatibility with `black` while shaping the import as a grid where
+each import has its own line.
 
 ```toml
 [tool.isort]
 profile = "black"
-force_single_line = "true"
+force_grid_wrap = 2
 ```
 
 #### pytest
