@@ -46,7 +46,7 @@ adopt [Rust] and [Python].
 
 They are respectively used for the following use cases:
 
-- Projects dealing with data science must be written in Python.
+- Projects dealing with data science or GIS must be written in Python.
 - All other projects must be written in Rust.
 
 ## General Concepts
