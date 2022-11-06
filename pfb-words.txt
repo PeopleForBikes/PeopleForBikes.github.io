@@ -2,6 +2,7 @@
 addopts
 autobuild
 bpython
+Brokenspoke
 codecov
 copybutton
 deserialization
@@ -14,6 +15,7 @@ justfile
 labelr
 minversion
 mktemp
+opentype
 PFB's
 pydocstyle
 pylint
@@ -23,6 +25,7 @@ rerunfailures
 scrapd
 socio
 svggloo
+tailwindcss
 timeframe
 virtualenvs
 vrlp

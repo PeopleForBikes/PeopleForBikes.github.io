@@ -42,12 +42,13 @@ recent years:
 
 Like dependencies, we try to reduce the amount of general-purpose programming
 languages we use for [PeopleForBikes] projects, therefore we decided to only
-adopt [Rust] and [Python].
+adopt Javascript, [Rust] and [Python].
 
 They are respectively used for the following use cases:
 
-- Projects dealing with data science or GIS must be written in Python.
-- All other projects must be written in Rust.
+- Web projects must be written in Javascript
+- Projects dealing with data science or GIS must be written in [Python].
+- All other projects must be written in [Rust].
 
 ## General Concepts
 
@@ -125,7 +126,7 @@ addopts = "-p no:warnings --cov-report term-missing --cov-report html --xdoctest
 To quickly start a project, run the following commands:
 
 ```bash
-POETRY_PROJECT=my-project
+export POETRY_PROJECT=my-project
 poetry new ${POETRY_PROJECT}
 cd ${POETRY_PROJECT}
 poetry add -D \
@@ -221,6 +222,111 @@ poetry add -D \
 
 - [just]: General purpose task runner
 
+## Web
+
+Web project must be built with [React], [Next.js] and [Tailwind CSS].
+
+### Initialization
+
+To quickly start a project, run the following commands:
+
+```bash
+export WEB_PROJECT=my-project
+npx create-next-app ${WEB_PROJECT}
+cd ${WEB_PROJECT}
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+Go through the next sections to configure [Tailwind CSS] correctly.
+
+#### tailwind.config.js
+
+We extend the existing [Tailwind CSS] theme with the PFB fonts and colors:
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    fontFamily: {
+      sans: ["Montserrat", "sans-serif"],
+      dharma": ["Dharma Gothic E"],
+    },
+    extend: {
+      colors: {
+        "pfb-deep-navy": "#00263E",
+        "pfb-bright-cyan": "#009EDB",
+        "pfb-bright-red": "#D71920",
+        "pfb-coal": "#4D4D4F",
+        "pfb-gray": "#8B8A8D",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+#### Custom fonts
+
+PFB uses some custom private fonts that require some setup in order to be used.
+
+First, copy the font files into the `public/fonts` folder of the web project.
+The font are available in the
+[Brokenspoke repository](https://github.com/PeopleForBikes/brokenspoke/tree/main/assets/fonts/DharmaGothicExtended).
+
+The folders should look like this:
+
+```bash
+public
+├── fonts
+│   ├── Dharma Type - DharmaGothicE-Bold.otf
+│   └── Dharma Type - DharmaGothicE-Light.otf
+```
+
+Add the new `font-faces` to `styles/globals.css`:
+
+```css
+// styles/globals.css
+
+@font-face {
+  font-family: "Dharma Gothic E";
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Dharma Gothic E";
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf") format("opentype");
+}
+```
+
+A new custom font family is now available using the [Tailwind CSS] class
+`font-dharma`.
+
+### Component Collections
+
+Here are the components collection that have been selected by the team:
+
+- <https://flowbite.com/>
+- <https://kitwind.io/products/kometa/components>
+- <https://merakiui.com/>
+- <https://tailblocks.cc/>
+- <https://tailwind-elements.com/>
+- <https://tailwindcomponents.com/>
+- <https://tailwindcss.com/docs/installation>
+- <https://tailwindtemplates.io/templates>
+- <https://www.mambaui.com/>
+- <https://www.tailwind-kit.com/>
+- <https://www.tailwindtoolbox.com/>
+
+### Helpers
+
+- <https://tailwindcomponents.com/cheatsheet/>
+
 <!-- Dependency links -->
 
 [alive-progress]: https://github.com/rsalmei/alive-progress
@@ -237,6 +343,7 @@ poetry add -D \
 [loguru]: https://github.com/Delgan/loguru
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [myst-parser]: https://myst-parser.readthedocs.io/en/latest/
+[next.js]: https://nextjs.org
 [poetry]: https://python-poetry.org/
 [pydantic]: https://pydantic-docs.helpmanual.io/
 [pydocstyle]: https://www.pydocstyle.org/en/stable/
@@ -246,7 +353,8 @@ poetry add -D \
 [pytest-rerunfailures]: https://github.com/pytest-dev/pytest-rerunfailures
 [pytest-socket]: https://github.com/miketheman/pytest-socket
 [pytest-xdist]: https://github.com/pytest-dev/pytest-xdist
-[pytest]: https://docs.pytest.org/en/latest/
+[pytest]: https://docs.pytest.org/en/latest
+[react]: https://reactjs.org/
 [reqwest]: https://github.com/seanmonstar/reqwest
 [rich]: https://github.com/Textualize/rich
 [seaorm]: https://www.sea-ql.org/SeaORM/
@@ -257,6 +365,7 @@ poetry add -D \
 [sphinx-copybutton]: https://github.com/executablebooks/sphinx-copybutton
 [sphinx]: https://www.sphinx-doc.org/en/master/
 [sqlfluff]: https://docs.sqlfluff.com/en/stable/index.html
+[tailwind css]: https://tailwindcss.com/
 [tenacity]: https://tenacity.readthedocs.io/en/latest/
 [tracing.rs]: https://tracing.rs/tracing/
 [tokio]: https://tokio.rs/
