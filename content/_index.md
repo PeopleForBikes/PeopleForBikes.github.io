@@ -20,16 +20,18 @@ everyone.
 
 Our projects:
 
+- [brokenspoke]: A collection of tools for the BNA
 - [brokenspoke-analyzer]: Run Bicycle Network Analysis locally
-- [retrieve]: Simplify downloading PeopleForBikes dataset
 - [measure]: Quantify and identify bike lanes in cities
-- [svggloo]: Render SVG templates
+- [scorecards]: Retrieve the BNA scorecards for your country
+
+And more to come!
 
 [bicycle network analysis]: https://bna.peopleforbikes.org/
 [bna]: https://bna.peopleforbikes.org/
-[brokenspoke-analyzer]: https://github.com/PeopleForBikes/brokenspoke-analyzer
+[brokenspoke]: https://peopleforbikes.github.io/brokenspoke/
+[brokenspoke-analyzer]: https://peopleforbikes.github.io/brokenspoke-analyzer/
 [city ratings]: https://cityratings.peopleforbikes.org/
 [measure]: https://github.com/PeopleForBikes/measure
 [peopleforbikes]: https://www.peopleforbikes.org/
-[retrieve]: https://github.com/PeopleForBikes/retrieve
-[svggloo]: https://github.com/PeopleForBikes/svggloo
+[scorecards]: https://peopleforbikes.github.io/scorecards/
