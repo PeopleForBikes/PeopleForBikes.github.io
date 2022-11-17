@@ -1,15 +1,21 @@
 # PeopleForBikes Words
+addopts
 autobuild
 bpython
+Brokenspoke
 codecov
 copybutton
 deserialization
+doctest
+doctests
 EDITMSG
 furo
 isort
 justfile
 labelr
+minversion
 mktemp
+opentype
 PFB's
 pydocstyle
 pylint
@@ -19,6 +25,7 @@ rerunfailures
 scrapd
 socio
 svggloo
+tailwindcss
 timeframe
 virtualenvs
 vrlp

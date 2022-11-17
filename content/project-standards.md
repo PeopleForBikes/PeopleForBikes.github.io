@@ -113,7 +113,7 @@ rsync -vrlp --exclude '.git' "${DOT_GITHUB_TMP}" .
 Then apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
 
 ```bash
-labelr --organization PeopleForBikes --sync .github/labels
+labelr --organization PeopleForBikes --sync .github/labels.yml
 ```
 
 And finally submit the changes:

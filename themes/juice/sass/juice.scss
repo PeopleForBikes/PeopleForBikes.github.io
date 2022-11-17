@@ -58,6 +58,12 @@ header {
   }
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .nav-item {
   margin: 0 10px;
   text-decoration: none;
