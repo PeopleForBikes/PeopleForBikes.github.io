@@ -123,3 +123,43 @@ git add .
 git commit -am "Initial import" -m "Imports project scaffolding."
 git push
 ```
+
+## Naming conventions
+
+### Visual assets
+
+Visual assets should be named in a way where contributors can easily extract the
+relevant information directly from the file name itself. There must not be any
+complicated nested folder structure necessary.
+
+- The global naming convention must respect the following pattern:
+
+  `<type>-<name>-<description>[-<size>][-<orientation>].<extension>`
+
+- `<type>` must be one of the following:
+
+  - logo
+  - icon
+  - bg for background
+
+- Lower case only
+- Do not use spaces, use dashes
+- `<size>` can be simplified if the asset is a square. E.g. “512” would mean
+  “512x512”
+- Images with the `.svg` `<extension>` do not have a size since they can be
+  resized at will.
+- `<orientation>` (or shape) can optionally be added if it provides meaningful
+  information.
+
+  Valid values are:
+
+  - square
+  - stacked
+  - horizontal
+  - vertical
+
+#### Examples
+
+- logo-bna-full-1015x596.png
+- logo-bna-full-dark-white-text-1015×597.png
+- logo-pfb-no-text-square.svg
