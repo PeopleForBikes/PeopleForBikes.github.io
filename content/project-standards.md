@@ -138,18 +138,18 @@ complicated nested folder structure necessary.
 
 - `<type>` must be one of the following:
 
-  - logo
+  - bg (short for background)
   - icon
-  - bg for background
+  - logo
+  - template
 
 - Lower case only
 - Do not use spaces, use dashes
 - `<size>` can be simplified if the asset is a square. E.g. “512” would mean
   “512x512”
-- Images with the `.svg` `<extension>` do not have a size since they can be
-  resized at will.
-- `<orientation>` (or shape) can optionally be added if it provides meaningful
-  information.
+  - Images with the `.svg` `<extension>` do not have a size since they can be
+    resized at will
+- `<orientation>` (or shape) can optionally be added if it provides value
 
   Valid values are:
 
@@ -158,8 +158,25 @@ complicated nested folder structure necessary.
   - horizontal
   - vertical
 
+- Visual assets can be versioned as well. For instance, it is common to go
+  through several iterations for a `template`. In this case we follow the
+  [calver] specification with the `vYY.Minor` scheme, where:
+
+  - The letter "v" (for "version") precedes the scheme
+  - `YY` represents the year with 2 digits (e.g.: 22 for 2022)
+  - `Minor` represents the iteration number starting at one (1), without
+    zero-padding (e.g: 1, 2, 10, etc.)
+
+  - Examples:
+
+    - v21.17
+    - v22.4
+
 #### Examples
 
 - logo-bna-full-1015x596.png
 - logo-bna-full-dark-white-text-1015×597.png
 - logo-pfb-no-text-square.svg
+- template-scorecard-v22.4.svg
+
+[calver]: https://calver.org/

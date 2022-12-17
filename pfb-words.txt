@@ -3,6 +3,7 @@ addopts
 autobuild
 bpython
 Brokenspoke
+calver
 codecov
 copybutton
 deserialization
