@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-labels: 'kind/feature'
+labels: "kind/feature"
 ---
 
 # Feature request
@@ -14,7 +14,8 @@ labels: 'kind/feature'
 
 ## Expected Behavior
 
-<!-- Tell us how it should work, how it differs from the current implementation. -->
+<!-- Tell us how it should work, how it differs from the current implementation.
+-->
 
 ## Possible Solution
 

@@ -8,7 +8,7 @@ lint: lint-md lint-sass lint-spelling
 
 # Lint markown files, ignoring the content of the themes.
 lint-md:
-  npx --yes markdownlint-cli2 "**/*.md" "#themes"
+  npx --yes markdownlint-cli2 "**/*.md" "#themes" "#.github/README.md"
 
 # Lint sass files.
 lint-sass:
