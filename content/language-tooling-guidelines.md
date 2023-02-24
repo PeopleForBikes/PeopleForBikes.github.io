@@ -76,7 +76,9 @@ projects.
 ### Project management
 
 - [poetry]: Python project management de facto standard
-- [invoke]: Pure python task runner
+
+We recommend using [just] for managing administration tasks, but for more
+complex scenarios [invoke] is an acceptable replacement.
 
 ### Poetry settings
 
@@ -129,22 +131,19 @@ To quickly start a project, run the following commands:
 export POETRY_PROJECT=my-project
 poetry new ${POETRY_PROJECT}
 cd ${POETRY_PROJECT}
-poetry add -D \
+poetry add -G dev \
   black \
   bpython \
-  flake8 \
   furo\
-  invoke \
   isort \
   myst-parser \
-  pydocstyle \
-  pylint \
   pytest \
   pytest-cov \
   pytest-mock \
   pytest-rerunfailures \
   pytest-socket \
   pytest-xdist \
+  ruff \
   Sphinx\
   sphinx-autobuild \
   sphinx-copybutton \
@@ -166,10 +165,8 @@ poetry add -D \
 #### Linting
 
 - [black]: the uncompromising Python code formatter
-- [flake8]: style guide enforcement
 - [isort]: sorts your imports
-- [pydocstyle]: ensure compliance with Python docstring conventions
-- [pylint]: python linter
+- [ruff]: an extremely fast Python linter, written in Rust
 
 #### Docs
 
@@ -335,7 +332,6 @@ Here are the components collection that have been selected by the team:
 [black]: https://github.com/psf/black
 [clap]: https://clap.rs/
 [color-eyre]: https://github.com/yaahc/color-eyre
-[flake8]: https://flake8.pycqa.org/en/latest/
 [furo]: https://pradyunsg.me/furo/
 [indicatif]: https://github.com/mitsuhiko/indicatif
 [invoke]: https://www.pyinvoke.org/
@@ -346,8 +342,6 @@ Here are the components collection that have been selected by the team:
 [next.js]: https://nextjs.org
 [poetry]: https://python-poetry.org/
 [pydantic]: https://pydantic-docs.helpmanual.io/
-[pydocstyle]: https://www.pydocstyle.org/en/stable/
-[pylint]: https://pylint.org/
 [pytest-cov]: https://github.com/pytest-dev/pytest-cov
 [pytest-mock]: https://github.com/pytest-dev/pytest-mock/
 [pytest-rerunfailures]: https://github.com/pytest-dev/pytest-rerunfailures
@@ -357,6 +351,7 @@ Here are the components collection that have been selected by the team:
 [react]: https://reactjs.org/
 [reqwest]: https://github.com/seanmonstar/reqwest
 [rich]: https://github.com/Textualize/rich
+[ruff]: https://github.com/charliermarsh/ruff
 [seaorm]: https://www.sea-ql.org/SeaORM/
 [serde]: https://serde.rs/
 [shellcheck]: https://github.com/koalaman/shellcheck
