@@ -78,7 +78,7 @@ type of work being done:
 - [CC0](#non-substantial-works) license to be used for snippets, data,
   boilerplate
 - For something else or special circumstances, open an issue in the specific
-  project or contact the team: XXX
+  project or contact [the team].
 
 ### Software
 
@@ -100,7 +100,7 @@ and is simple to understand, use, and comply with:
 - Keep that `LICENSE.md` file and copyright notice in any modified versions.
 
 If you feel that [MIT] is really the wrong license for a substantial [BNA
-Mechanics] open source project, let's talk: XXX.
+Mechanics] open source project, let's talk with [the team].
 
 ### Content
 
@@ -135,7 +135,7 @@ To use [CC-BY-4.0]:
   preserved. It can be useful to provide an example of how to do so.
 
 If you feel that [CC-BY-4.0] is really the wrong license for substantial GitHub
-open source non-software content, let's talk: XXX.
+open source non-software content, let's talk with [the team].
 
 ### Non-substantial works
 
@@ -191,7 +191,7 @@ To use [CC0-1.0]:
 
 Have questions about whether what you're working on matches one of the above
 example classes and meets the two criteria above, or feel that [CC0-1.0] isn't
-the right license for those cases? Let's talk: XXX.
+the right license for those cases? Let's talk with [the team].
 
 ## Naming conventions
 
@@ -338,3 +338,4 @@ gh repo archive -y
 [cc-by-4.0]: https://creativecommons.org/licenses/by/4.0/deed.en
 [github]: http://github.com
 [mit]: https://choosealicense.com/licenses/mit/
+[the team]: mailto:research@peopleforbikes.org
