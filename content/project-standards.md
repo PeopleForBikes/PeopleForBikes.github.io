@@ -24,10 +24,11 @@ weight = 40
   - Must ensure reproducibility
   - A Makefile, justfile or a package.json at the root of the project is a good
     example of how to automate maintenance tasks.
-  - The commands must be backed by scripts (instead of being written inline).
+  - Non trivial commands must be backed by scripts (instead of being written
+    inline).
 - Start designing API specification before implementation (i.e. design first
   approach)
-  - OpenAPI 3+ specification
+  - Use the [OpenAPI 3+ specification](https://swagger.io/specification/)
   - Zalando provides very good
     [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
     worth following
@@ -66,63 +67,131 @@ be used when creating a project.
   - Use online services like [coveralls](https://coveralls.io) or
     [codecov](https://codecov.io)
 
-## Administrative tasks
+## Licenses
 
-### Create a new GitHub repository
+The [BNA Mechanics] team selected the following licenses to use depending on the
+type of work being done:
 
-> **Remark: this operation can only be performed by administrators.**
+- [MIT](#software) license to be used for code
+- [CC-BY](#content) license to be used for content other than code
+  (documentation, media)
+- [CC0](#non-substantial-works) license to be used for snippets, data,
+  boilerplate
+- For something else or special circumstances, open an issue in the specific
+  project or contact the team: XXX
 
-We recommend using using the [GitHub CLI](https://cli.github.com/) in general as
-we find it very convenient, but even if it is not your cup of tea, it should at
-least be used to create new repositories with the right parameters from the get
-go.
+### Software
 
-Start by assigning the repository name to the `PFB_REPO` variable:
+Default: [MIT]
 
-```bash
-export PFB_REPO=my-project
-```
+For most substantial [BNA Mechanics] open source software projects, there's a
+simple default answer: [MIT].
 
-Create the repository:
+[MIT] is the
+[most popular license](https://github.com/blog/1964-open-source-license-usage-on-github-com)
+for public open source projects on [github]. It has great cultural acceptance
+and is simple to understand, use, and comply with:
 
-> **Remark: adjust the `--description` and `--gitignore` flags with the
-> appropriate values.**
+- Add a `LICENSE.md` file at the root of the project, with the [MIT] license
+  text and PeopleForBikes copyright notice: "Copyright (c) 2022 PeopleForBikes".
+  When using the [GitHub CLI](#create-a-new-github-repository) to create a new
+  project, the file will be automatically added. Otherwise, simply copy the
+  license text from <https://choosealicense.com/licenses/mit>
+- Keep that `LICENSE.md` file and copyright notice in any modified versions.
 
-```bash
-gh repo create \
-  "PeopleForBikes/${PFB_REPO}" \
-  --public \
-  --clone \
-  --license MIT \
-  --description "Describe my project in one line." \
-  --gitignore Rust
-cd "${PFB_REPO}"
-```
+If you feel that [MIT] is really the wrong license for a substantial [BNA
+Mechanics] open source project, let's talk: XXX.
 
-After that, import the `.github` directory:
+### Content
 
-```bash
-DOT_GITHUB_TMP="$(mktemp -d)/.github"
-git clone --depth=1 git@github.com:PeopleForBikes/.github "${DOT_GITHUB_TMP}"
-rsync -vrlp --exclude '.git' "${DOT_GITHUB_TMP}" .
-```
+Default: [CC-BY-4.0]
 
-> **Remark: check the `.github/workflows` folder and remove the workflows that
-> do not pertain to the project.**
+Occasionally we publish substantial non-software content (e.g., documentation,
+media) that we want to give others permission to copy, modify, and distribute if
+they give us credit and don't use our trademarks. That's what [CC-BY-4.0]
+allows. It's roughly equivalent to [MIT] in terms of being permissive and having
+good cultural acceptance, but is designed for non-software works (e.g., license
+notice can be provided with a link rather than including a copy of the license
+text).
 
-Then apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
+To use [CC-BY-4.0]:
 
-```bash
-labelr --organization PeopleForBikes --sync .github/labels.yml
-```
+- In the case an entire repository should be released under [CC-BY-4.0]: add a
+  `LICENSE.md` file with the [CC-BY-4.0] license text. It is unlikely you will
+  want to do this, and it is not facilitated by the web interface license
+  picker. The license text is available at
+  <https://creativecommons.org/licenses/by/4.0/legalcode.txt> but check with the
+  team to ensure this is what you really want.
+- In the case particular files or parts of content (e.g., documentation or a
+  media file) should be released under [CC-BY-4.0], note this precisely in the
+  repository's `README.md`.
+- If the released material is rendered or published, e.g., as or in web pages,
+  it can also be useful to include a [CC-BY-4.0] notice there, e.g., "This
+  documentation is released under [CC-BY-4.0]", with a link to
+  <https://creativecommons.org/licenses/by/4.0/> or the repository
+  `README.md#Licenses` depending on the complexity of the situation. Please ask
+  the team for help getting it right.
+- To use material under [CC-BY-4.0], license notice and attribution must be
+  preserved. It can be useful to provide an example of how to do so.
 
-And finally submit the changes:
+If you feel that [CC-BY-4.0] is really the wrong license for substantial GitHub
+open source non-software content, let's talk: XXX.
 
-```bash
-git add .
-git commit -am "Initial import" -m "Imports project scaffolding."
-git push
-```
+### Non-substantial works
+
+Default: [CC0-1.0]
+
+[MIT] and [CC-BY-4.0] conditions are easy to comply with, but sometimes projects
+are better served by not having any conditions, not even a requirement for
+attribution.
+
+[CC0-1.0] waives all copyright restrictions but reserves trademark and patent
+rights, making it an easy unconditional license for PeopleForBikes material
+when:
+
+- burden to user of maintaining copyright notices forever is large relative to
+  incremental value of using licensed material, and
+- there is no demonstrable business value from mandating maintenance of
+  copyright notices
+
+#### Examples
+
+1. Sample snippets; eg those under <https://developer.github.com/guides/>
+2. Starter or other boilerplate material
+3. Purely functional configuration with minimal expressivity that we don't think
+   is/ought be subject to copyright anyway; add certainty that there are no
+   restrictions
+4. Data in which there is clearly no demonstrable business value from mandating
+   maintenance of copyright notices
+5. More substantial code/material alongside/in same repo as one of the above and
+   still no demonstrable business value from restrictions; just use an
+   unconditional license for more substantial bits to minimize number of
+   licenses involved
+
+To use [CC0-1.0]:
+
+- In the case an entire repository should be released under [CC0-1.0]: add a
+  `LICENSE.md` file with the [CC0-1.0] license text. You can do this via the web
+  interface on [github] (a license picker will automatically appear when you add
+  a new file called `LICENSE.md`) or by copying the license text from
+  <https://choosealicense.com/licenses/cc0-1.0>
+- In the case particular files or parts of content (e.g., code snippets in
+  documentation) should be released under [CC0-1.0], note this precisely in the
+  repository's `README.md`.
+- If the released material is rendered or published, e.g., as or in web pages,
+  it can also be useful to include a [CC0-1.0] notice there, e.g., "Code samples
+  in this documentation are released under CC0-1.0", with a link to
+  <https://creativecommons.org/publicdomain/zero/1.0/> or the repository
+  README.md#Licenses depending on the complexity of the situation. Please ask
+  the team for help getting it right.
+- Note there are zero copyright license requirements when using material
+  released under [CC0-1.0], but it is usually best practice to maintain license
+  notices and attribution anyway, as you would for [MIT] and [CC-BY] software
+  and non-software above.
+
+Have questions about whether what you're working on matches one of the above
+example classes and meets the two criteria above, or feel that [CC0-1.0] isn't
+the right license for those cases? Let's talk: XXX.
 
 ## Naming conventions
 
@@ -179,4 +248,93 @@ complicated nested folder structure necessary.
 - logo-pfb-no-text-square.svg
 - template-scorecard-v22.4.svg
 
+## Administrative tasks
+
+We recommend using the [GitHub CLI](https://cli.github.com/) in general as we
+find it very convenient, but even if it is not your cup of tea, it should at
+least be used to create new repositories with the right parameters from the get
+go.
+
+All the operations can also be performed via the [GitHub] website.
+
+### Create a new GitHub repository
+
+> **Remark: this operation can only be performed by administrators.**
+
+Start by assigning the repository name to the `PFB_REPO` variable:
+
+```bash
+export PFB_REPO=my-project
+```
+
+Create the repository:
+
+> **Remark: adjust the `--description` and `--gitignore` flags with the
+> appropriate values.**
+
+```bash
+gh repo create \
+  "PeopleForBikes/${PFB_REPO}" \
+  --public \
+  --clone \
+  --license MIT \
+  --description "Describe my project in one line." \
+  --gitignore Rust
+cd "${PFB_REPO}"
+```
+
+After that, import the `.github` directory:
+
+```bash
+DOT_GITHUB_TMP="$(mktemp -d)/.github"
+git clone --depth=1 git@github.com:PeopleForBikes/.github "${DOT_GITHUB_TMP}"
+rsync -vrlp --exclude '.git' "${DOT_GITHUB_TMP}" .
+```
+
+> **Remark: check the `.github/workflows` folder and remove the workflows that
+> do not pertain to the project.**
+
+Then apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
+
+```bash
+labelr --organization PeopleForBikes --sync .github/labels.yml
+```
+
+And finally submit the changes:
+
+```bash
+git add .
+git commit -am "Initial import" -m "Imports project scaffolding."
+git push
+```
+
+### Archive a public repository
+
+> **Remark: this operation can only be performed by administrators.**
+
+Archive repositories to indicate that they are unmaintained and make them
+read-only.
+
+Start by editing the repository's `README.md` file to add the following note at
+the top:
+
+```txt
+> **NOTE**: _This repository is no longer supported or updated by the BNA
+> Mechanics team. If you wish to continue to develop this code yourself, we
+> recommend you fork it._
+```
+
+Close all open issues and pull requests and archive the repository:
+
+```bash
+for n in $(gh issue list --state open --json number --jq .[].number); do gh issue close ${n} --reason "This repository was archived."; done
+for n in $(gh pr list --state open --json number --jq .[].number); do gh pr close ${n} --comment "This repository was archived."; done
+gh repo archive -y
+```
+
+[bna mechanics]: https://peopleforbikes.github.io
 [calver]: https://calver.org/
+[cc0-1.0]: https://choosealicense.com/licenses/cc0-1.0/
+[cc-by-4.0]: https://creativecommons.org/licenses/by/4.0/deed.en
+[github]: http://github.com
+[mit]: https://choosealicense.com/licenses/mit/
