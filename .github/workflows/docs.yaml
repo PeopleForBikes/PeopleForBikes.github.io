@@ -12,5 +12,3 @@ on:
 jobs:
   ci-rust:
     uses: PeopleForBikes/.github/.github/workflows/docs-zola.yml@main
-    with:
-      build-dir: .
