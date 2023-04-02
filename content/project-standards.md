@@ -257,60 +257,106 @@ go.
 
 All the operations can also be performed via the [GitHub] website.
 
+> **Remark: these operations require administrator privileges.**
+
 ### Create a new GitHub repository
 
-> **Remark: this operation can only be performed by administrators.**
+> **Remark: for React projects, refer to the
+> [web guidelines](https://peopleforbikes.github.io/language-tooling-guidelines/#web>).**
 
-Start by assigning the repository name to the `PFB_REPO` variable:
+Start by defining the `PFB` variables:
 
 ```bash
 export PFB_REPO=my-project
+export PFB_REPO_DESCRIPTION="Describe my project in one line."
+export PFB_REPO_LANG=<Node,Python,Rust> # Choose the appropriate language
 ```
 
 Create the repository:
-
-> **Remark: adjust the `--description` and `--gitignore` flags with the
-> appropriate values.**
 
 ```bash
 gh repo create \
   "PeopleForBikes/${PFB_REPO}" \
   --public \
-  --clone \
-  --license MIT \
-  --description "Describe my project in one line." \
-  --gitignore Rust
-cd "${PFB_REPO}"
+  --template "PeopleForBikes/bna-mechanics-project-template" \
+  --description "${PFB_REPO_DESCRIPTION}"
+git clone "git@github.com:PeopleForBikes/${PFB_REPO}"
 ```
 
-After that, import the `.github` directory:
+The `README.md` and the `.gitignore` files cannot be generated automatically
+when creating a repository from a template. Therefore they must be added after
+the fact:
 
 ```bash
-DOT_GITHUB_TMP="$(mktemp -d)/.github"
-git clone --depth=1 git@github.com:PeopleForBikes/.github "${DOT_GITHUB_TMP}"
-rsync -vrlp --exclude '.git' "${DOT_GITHUB_TMP}" .
+cd "${PFB_REPO}"
+echo -e "# ${PFB_REPO}\n\n${PFB_REPO_DESCRIPTION}" > README.md
+curl https://raw.githubusercontent.com/github/gitignore/main/${PFB_REPO_LANG}.gitignore \
+  | sort -u \
+  | grep -v -e "^#" \
+  | grep -v -e "^$" \
+  > .gitignore
 ```
 
-> **Remark: check the `.github/workflows` folder and remove the workflows that
-> do not pertain to the project.**
+Now, initialize the project, depending on its programming language:
 
-Then apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
+- Rust: `cargo init`
+- Python:
+  `poetry init --name "${PFB_REPO}" --description "${PFB_REPO_DESCRIPTION}"`
+
+Check the `.github/workflows` folder and remove the workflows that do not
+pertain to the project.
+
+Then submit the changes:
+
+```bash
+git add .
+git commit -sam "Initial import" -m "Imports project scaffolding."
+git push
+```
+
+Apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
 
 ```bash
 labelr --organization PeopleForBikes --sync .github/labels.yml
 ```
 
-And finally submit the changes:
+Finally, setup the branch protection:
+
+```json
+echo '{
+  "required_status_checks": {
+    "strict": true,
+    "checks": [{ "context": "lint"}, {"context": "test"}, {"context": "build"}]
+  },
+  "enforce_admins": false,
+  "required_pull_request_reviews": {
+    "dismiss_stale_reviews": true,
+    "required_approving_review_count": 1
+  },
+  "restrictions": null
+}' >/tmp/config-branch-rules
+```
 
 ```bash
-git add .
-git commit -am "Initial import" -m "Imports project scaffolding."
-git push
+gh api \
+  --method PUT \
+  --preview luke-cage \
+  --input /tmp/config-branch-rules \
+  repos/PeopleForBikes/${PFB_REPO}/branches/main/protection
+```
+
+#### (Optional) Manually import the files
+
+Instead of using the template, the files can also be imported manually with the
+following command:
+
+```bash
+TEMPLATE_GITHUB_TMP="$(mktemp -d)/template"
+git clone --depth=1 git@github.com:PeopleForBikes/.bna-mechanics-project-template "${TEMPLATE_GITHUB_TMP}"
+rsync -vrlp --exclude '.git' "${TEMPLATE_GITHUB_TMP}" .
 ```
 
 ### Archive a public repository
-
-> **Remark: this operation can only be performed by administrators.**
 
 Archive repositories to indicate that they are unmaintained and make them
 read-only.
