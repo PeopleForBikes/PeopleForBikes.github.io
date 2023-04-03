@@ -322,11 +322,14 @@ labelr --organization PeopleForBikes --sync .github/labels.yml
 
 Finally, setup the branch protection:
 
+> **The checks may need to be adjusted based on the language that was selected
+> for the project.**
+
 ```json
 echo '{
   "required_status_checks": {
     "strict": true,
-    "checks": [{ "context": "lint"}, {"context": "test"}, {"context": "build"}]
+    "checks": [{ "context": "ci-rust / lint"}, {"context": "ci-rust / test"}, {"context": "ci-rust / build"}]
   },
   "enforce_admins": false,
   "required_pull_request_reviews": {
@@ -343,6 +346,12 @@ gh api \
   --preview luke-cage \
   --input /tmp/config-branch-rules \
   repos/PeopleForBikes/${PFB_REPO}/branches/main/protection
+```
+
+As the final touch, some repository settings can also be adjusted:
+
+```bash
+gh repo edit --enable-merge-commit=false --delete-branch-on-merge
 ```
 
 #### (Optional) Manually import the files
