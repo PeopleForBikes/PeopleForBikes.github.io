@@ -261,9 +261,6 @@ All the operations can also be performed via the [GitHub] website.
 
 ### Create a new GitHub repository
 
-> **Remark: for React projects, refer to the
-> [web guidelines](https://peopleforbikes.github.io/language-tooling-guidelines/#web>).**
-
 Start by defining the `PFB` variables:
 
 ```bash
@@ -272,7 +269,65 @@ export PFB_REPO_DESCRIPTION="Describe my project in one line."
 export PFB_REPO_LANG=<Node,Python,Rust> # Choose the appropriate language
 ```
 
-Create the repository:
+Then, depending of the type of project being created, the bootstrap process
+varies.
+
+#### Bootstrap a NextJS project
+
+Create the NextJS app:
+
+```bash
+npx create-next-app@latest \
+  --ts \
+  --tailwind \
+  --eslint \
+  --experimental-app \
+  --src-dir \
+  --import-alias @/* \
+  --use pnpm \
+  "${PFB_REPO}"
+```
+
+Import the BNA mechanics files:
+
+```bash
+cd ${PFB_REPO}
+TEMPLATE_GITHUB_TMP="$(mktemp -d)/template"
+git clone --depth=1 git@github.com:PeopleForBikes/bna-mechanics-project-template "${TEMPLATE_GITHUB_TMP}"
+rsync -vrlp --exclude '.git' "${TEMPLATE_GITHUB_TMP}/" .
+echo -e "# ${PFB_REPO}\n\n${PFB_REPO_DESCRIPTION}" > README.md
+```
+
+Check the `.github/workflows` folder and remove the workflows that do not belong
+to the project.
+
+```bash
+git add .
+git commit -sam "Import BNA Mechanics files" \
+  -m "Imports the BNA Mechanics files from the project template."
+```
+
+Configure the GitHub CLI to use SSH:
+
+```bash
+gh config set git_protocol ssh -h github.com
+```
+
+Create the GitHub repository:
+
+```bash
+gh repo create \
+  "PeopleForBikes/${PFB_REPO}" \
+  --public \
+  --description "${PFB_REPO_DESCRIPTION}" \
+  --source=. \
+  --remote=upstream \
+  --push
+```
+
+#### Bootstrap a Rust/Python project
+
+Create the GitHub repository:
 
 ```bash
 gh repo create \
@@ -283,9 +338,13 @@ gh repo create \
 git clone "git@github.com:PeopleForBikes/${PFB_REPO}"
 ```
 
-The `README.md` and the `.gitignore` files cannot be generated automatically
-when creating a repository from a template. Therefore they must be added after
-the fact:
+Initialize the project, depending on the programming language:
+
+- Rust: `cargo init`
+- Python:
+  `poetry init --name "${PFB_REPO}" --description "${PFB_REPO_DESCRIPTION}"`
+
+Add a `README.md` and the appropriate `.gitignore` file:
 
 ```bash
 cd "${PFB_REPO}"
@@ -297,15 +356,6 @@ curl https://raw.githubusercontent.com/github/gitignore/main/${PFB_REPO_LANG}.gi
   > .gitignore
 ```
 
-Now, initialize the project, depending on its programming language:
-
-- Rust: `cargo init`
-- Python:
-  `poetry init --name "${PFB_REPO}" --description "${PFB_REPO_DESCRIPTION}"`
-
-Check the `.github/workflows` folder and remove the workflows that do not
-pertain to the project.
-
 Then submit the changes:
 
 ```bash
@@ -313,6 +363,11 @@ git add .
 git commit -sam "Initial import" -m "Imports project scaffolding."
 git push
 ```
+
+#### All projects
+
+Check the `.github/workflows` folder and remove the workflows that do not belong
+to the project.
 
 Apply the labels with [labelr](https://github.com/rgreinho/labelr-rs):
 
@@ -352,17 +407,6 @@ As the final touch, some repository settings can also be adjusted:
 
 ```bash
 gh repo edit --enable-merge-commit=false --delete-branch-on-merge
-```
-
-#### (Optional) Manually import the files
-
-Instead of using the template, the files can also be imported manually with the
-following command:
-
-```bash
-TEMPLATE_GITHUB_TMP="$(mktemp -d)/template"
-git clone --depth=1 git@github.com:PeopleForBikes/.bna-mechanics-project-template "${TEMPLATE_GITHUB_TMP}"
-rsync -vrlp --exclude '.git' "${TEMPLATE_GITHUB_TMP}" .
 ```
 
 ### Archive a public repository

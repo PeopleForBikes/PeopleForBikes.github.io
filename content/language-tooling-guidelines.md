@@ -223,19 +223,7 @@ poetry add -G dev \
 
 Web project must be built with [React], [Next.js] and [Tailwind CSS].
 
-### Initialization
-
-To quickly start a project, run the following commands:
-
-```bash
-export WEB_PROJECT=my-project
-npx create-next-app ${WEB_PROJECT}
-cd ${WEB_PROJECT}
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-
-Go through the next sections to configure [Tailwind CSS] correctly.
+### Tailwind CSS
 
 #### tailwind.config.js
 
@@ -304,7 +292,7 @@ Add the new `font-faces` to `styles/globals.css`:
 A new custom font family is now available using the [Tailwind CSS] class
 `font-dharma`.
 
-### Component Collections
+#### Component Collections
 
 Here are the components collection that have been selected by the team:
 
@@ -320,7 +308,7 @@ Here are the components collection that have been selected by the team:
 - <https://www.tailwind-kit.com/>
 - <https://www.tailwindtoolbox.com/>
 
-### Helpers
+#### Helpers
 
 - <https://tailwindcomponents.com/cheatsheet/>
 
