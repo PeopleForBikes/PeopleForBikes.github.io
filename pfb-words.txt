@@ -1,6 +1,7 @@
 # PeopleForBikes Words
 addopts
 autobuild
+automatable
 bpython
 Brokenspoke
 calver
@@ -18,11 +19,13 @@ minversion
 mktemp
 opentype
 PFB's
+pnpm
 pydocstyle
 pylint
 pyproject
 pytest
 rerunfailures
+roadmap
 scrapd
 socio
 svggloo
