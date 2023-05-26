@@ -13,6 +13,7 @@ doctests
 EDITMSG
 furo
 isort
+jsonapi
 justfile
 labelr
 minversion

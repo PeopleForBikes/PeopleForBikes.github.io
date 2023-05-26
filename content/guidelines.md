@@ -71,6 +71,16 @@ projects.
 - Use linters with default configurations
   - Unless there is an absolute need for a change
 
+## APIs
+
+- We follow the [jsonapi.org] specification.
+- When in doubt, or if something is unclear in the [jsonapi.org] specification,
+  refer to the [GitHub REST API] documentation for a well thought real life
+  example.
+- Zalando provides very good
+  [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
+  worth following
+
 ## Python
 
 ### Project management
@@ -311,6 +321,11 @@ Here are the components collection that have been selected by the team:
 #### Helpers
 
 - <https://tailwindcomponents.com/cheatsheet/>
+
+<!-- API links -->
+
+[github rest api]: https://docs.github.com/en/rest
+[jsonapi.org]: https://jsonapi.org/
 
 <!-- Dependency links -->
 

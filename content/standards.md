@@ -86,9 +86,6 @@ and natural to build high quality deliverables.
 - Start designing API specification before implementation (i.e. design first
   approach)
   - Use the [OpenAPI 3+ specification](https://swagger.io/specification/)
-  - Zalando provides very good
-    [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
-    worth following
 
 ### Continuous Integration
 
