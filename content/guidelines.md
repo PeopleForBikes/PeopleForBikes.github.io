@@ -142,7 +142,6 @@ export POETRY_PROJECT=my-project
 poetry new ${POETRY_PROJECT}
 cd ${POETRY_PROJECT}
 poetry add -G dev \
-  black \
   bpython \
   furo\
   isort \
@@ -174,9 +173,8 @@ poetry add -G dev \
 
 #### Linting
 
-- [black]: the uncompromising Python code formatter
 - [isort]: sorts your imports
-- [ruff]: an extremely fast Python linter, written in Rust
+- [ruff]: an extremely fast Python linter and formatter , written in Rust
 
 #### Docs
 
@@ -332,7 +330,6 @@ Here are the components collection that have been selected by the team:
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum
 [aiohttp]: https://docs.aiohttp.org/en/stable/
-[black]: https://github.com/psf/black
 [clap]: https://clap.rs/
 [color-eyre]: https://github.com/yaahc/color-eyre
 [furo]: https://pradyunsg.me/furo/
