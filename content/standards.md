@@ -365,6 +365,7 @@ npx create-next-app@latest \
   --src-dir \
   --import-alias @/* \
   --use-pnpm \
+  --no-tailwind \
   "${PFB_REPO}"
 ```
 
