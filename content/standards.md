@@ -1,13 +1,70 @@
 +++
-title = "Project standards"
+title = "Standards"
 sort_by = "weight"
 date = 2022-01-17
 weight = 40
 +++
 
-# Project standards
+# Standards
 
-## General recommendations
+These standards represent the way of working of the [BNA Mechanics] team.
+
+They aim to create an enjoyable contributing culture, while making it obvious
+and natural to build high quality deliverables.
+
+## Behavioral standards
+
+### Culture & Values
+
+- Pass negatives up, positives all around.
+- Operate with a self-employed mentality - have agency.
+- Strive for quality even in the little things.
+- Don't cling on a mistake just because you spent a lot of time making it.
+
+### Collaboration
+
+- We succeed or fail together.
+- We should feel empowered to pair with anyone to work across the stack.
+- Before writing any code, we should agree on the design & direction of the
+  upcoming feature.
+- Include our users/consumers when determining our features & requirements.
+- Favor cooperative exploration over debate when you can - you can’t learn and
+  defend at the same time.
+
+## Operational standards
+
+### Data-driven
+
+- Use data wherever available to make the right choices and inform decisions.
+- If we care about something, we should ensure we have a way to measure it.
+
+### Automation
+
+- Strive to automate everything which is automatable.
+
+### Documentation
+
+- Write the appropriate documentation for the work we are doing.
+  - README.md, Changelog.md, API docs, General documentation, etc.
+- When breaking down work, we should provide a roadmap for what/how we plan to
+  iterate to a complete feature.
+- When creating external documentation for a consumer of our software, we should
+  solicit feedback from them & update accordingly.
+- Avoid tribal knowledge.
+
+### Error Handling as a First-Class Citizen
+
+- We should plan for and handle errors early, rather than only coding the "happy
+  path".
+- We should continually ask "how can this fail?"
+- If we don't know the right way to handle the error, we should at least have a
+  place in the code where we can come back to in order to handle it properly.
+- Maintain a backlog of known issues, and review & prioritize them alongside new
+  features.
+
+## Project Standards
+
+### General recommendations
 
 - Projects must provide a way to build artifacts using standard tools (i.e. no
   custom scripts made for a specific machine/environment)
@@ -29,22 +86,20 @@ weight = 40
 - Start designing API specification before implementation (i.e. design first
   approach)
   - Use the [OpenAPI 3+ specification](https://swagger.io/specification/)
-  - Zalando provides very good
-    [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
-    worth following
 
-## Continuous Integration
+### Continuous Integration
 
 The CI rules:
 
 - Projects must comply with CI task requirements.
 - Developers must be able to run the tasks locally.
 - The CI acts as the source of truth.
+- The master branch must be continually deployable.
 
 The `PeopleForBikes/.github` repository contains starter workflows that should
 be used when creating a project.
 
-### Required tasks
+#### Required tasks
 
 - Formatter
 - Linters
@@ -66,6 +121,26 @@ be used when creating a project.
   - Think about your teammates who worked on increasing this coverage
   - Use online services like [coveralls](https://coveralls.io) or
     [codecov](https://codecov.io)
+
+### SCM
+
+- Write good commit messages
+  - [How to Write a Git Commit Message](https://cbea.ms/git-commit/)
+  - [BNA Mechanics Contributing Guidelines](../contributing/#commit-example)
+
+### Testing
+
+- Tests should be considered as production level code.
+- Eliminate failing & flaky tests.
+- Tests should be run on every PR, automatically.
+- We should aim to write unit, integration and end-to-end tests (where it makes
+  sense).
+- If a PR does not have tests, we should feel empowered to question why.
+- When a bug is found , we should aim to add a test that exercises the bug, so
+  it does not happen again.
+- Use doctest to test the happy path.
+  - This will also enhance the quality of the documentation by providing short
+    examples to the users.
 
 ## Licenses
 
@@ -195,6 +270,27 @@ the right license for those cases? Let's talk with [the team].
 
 ## Naming conventions
 
+### Versioning
+
+- Assets and should be versioned when applicable. For instance, it is common to
+  go through several iterations for a `template`. In this case we follow the
+  [calver] specification with the `vYY.Minor` scheme, where:
+
+  - The letter "v" (for "version") precedes the scheme
+  - `YY` represents the year with 2 digits (e.g.: 22 for 2022)
+  - `Minor` represents the iteration number starting at one (1), without
+    zero-padding (e.g: 1, 2, 10, etc.)
+
+  - Examples:
+
+    - v21.17
+    - v22.4
+
+#### Examples
+
+- template-scorecard-v22.4.svg
+- city_ratings_v22.7.csv
+
 ### Visual assets
 
 Visual assets should be named in a way where contributors can easily extract the
@@ -227,26 +323,11 @@ complicated nested folder structure necessary.
   - horizontal
   - vertical
 
-- Visual assets can be versioned as well. For instance, it is common to go
-  through several iterations for a `template`. In this case we follow the
-  [calver] specification with the `vYY.Minor` scheme, where:
-
-  - The letter "v" (for "version") precedes the scheme
-  - `YY` represents the year with 2 digits (e.g.: 22 for 2022)
-  - `Minor` represents the iteration number starting at one (1), without
-    zero-padding (e.g: 1, 2, 10, etc.)
-
-  - Examples:
-
-    - v21.17
-    - v22.4
-
 #### Examples
 
 - logo-bna-full-1015x596.png
 - logo-bna-full-dark-white-text-1015×597.png
 - logo-pfb-no-text-square.svg
-- template-scorecard-v22.4.svg
 
 ## Administrative tasks
 

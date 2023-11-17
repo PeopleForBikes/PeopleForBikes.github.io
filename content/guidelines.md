@@ -71,6 +71,16 @@ projects.
 - Use linters with default configurations
   - Unless there is an absolute need for a change
 
+## APIs
+
+- We follow the [jsonapi.org] specification.
+- When in doubt, or if something is unclear in the [jsonapi.org] specification,
+  refer to the [GitHub REST API] documentation for a well thought real life
+  example.
+- Zalando provides very good
+  [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
+  worth following
+
 ## Python
 
 ### Project management
@@ -132,7 +142,6 @@ export POETRY_PROJECT=my-project
 poetry new ${POETRY_PROJECT}
 cd ${POETRY_PROJECT}
 poetry add -G dev \
-  black \
   bpython \
   furo\
   isort \
@@ -164,9 +173,8 @@ poetry add -G dev \
 
 #### Linting
 
-- [black]: the uncompromising Python code formatter
 - [isort]: sorts your imports
-- [ruff]: an extremely fast Python linter, written in Rust
+- [ruff]: an extremely fast Python linter and formatter , written in Rust
 
 #### Docs
 
@@ -275,13 +283,17 @@ Here are the components collection that have been selected by the team:
 
 - <https://tailwindcomponents.com/cheatsheet/>
 
+<!-- API links -->
+
+[github rest api]: https://docs.github.com/en/rest
+[jsonapi.org]: https://jsonapi.org/
+
 <!-- Dependency links -->
 
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum
-[aiohttp]: https://docs.aiohttp.org/en/stable
-[black]: https://github.com/psf/black
-[clap]: https://clap.rs
+[aiohttp]: https://docs.aiohttp.org/en/stable/
+[clap]: https://clap.rs/
 [color-eyre]: https://github.com/yaahc/color-eyre
 [furo]: https://pradyunsg.me/furo
 [indicatif]: https://github.com/mitsuhiko/indicatif
