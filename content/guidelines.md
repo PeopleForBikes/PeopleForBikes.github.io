@@ -42,11 +42,11 @@ recent years:
 
 Like dependencies, we try to reduce the amount of general-purpose programming
 languages we use for [PeopleForBikes] projects, therefore we decided to only
-adopt TypeScript, [Rust] and [Python].
+adopt [TypeScript], [Rust] and [Python].
 
 They are respectively used for the following use cases:
 
-- Web projects must be written in TypeScript
+- Web projects must be written in [TypeScript]
 - Projects dealing with data science or GIS must be written in [Python].
 - All other projects must be written in [Rust].
 
@@ -229,7 +229,7 @@ poetry add -G dev \
 
 ## Web
 
-Web projects will be built with [Next.js] using TypeScript
+Web projects will be built with [Next.js] using [TypeScript]
 #### Custom fonts
 
 PFB uses some custom private fonts that require some setup in order to be used.
@@ -323,11 +323,11 @@ Here are the components collection that have been selected by the team:
 [sphinx-copybutton]: https://github.com/executablebooks/sphinx-copybutton
 [sphinx]: https://www.sphinx-doc.org/en/master
 [sqlfluff]: https://docs.sqlfluff.com/en/stable/index.html
-[tailwind css]: https://tailwindcss.com
 [tenacity]: https://tenacity.readthedocs.io/en/latest
 [tracing.rs]: https://tracing.rs/tracing
 [tokio]: https://tokio.rs
 [typer]: https://typer.tiangolo.com
+[typescript]: https://www.typescriptlang.org
 [xdoctest]: https://github.com/Erotemic/xdoctest
 
 <!-- Tooling -->
