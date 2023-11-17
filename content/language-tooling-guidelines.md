@@ -42,11 +42,11 @@ recent years:
 
 Like dependencies, we try to reduce the amount of general-purpose programming
 languages we use for [PeopleForBikes] projects, therefore we decided to only
-adopt Javascript, [Rust] and [Python].
+adopt TypeScript, [Rust] and [Python].
 
 They are respectively used for the following use cases:
 
-- Web projects must be written in Javascript
+- Web projects must be written in TypeScript
 - Projects dealing with data science or GIS must be written in [Python].
 - All other projects must be written in [Rust].
 
@@ -221,41 +221,7 @@ poetry add -G dev \
 
 ## Web
 
-Web project must be built with [React], [Next.js] and [Tailwind CSS].
-
-### Tailwind CSS
-
-#### tailwind.config.js
-
-We extend the existing [Tailwind CSS] theme with the PFB fonts and colors:
-
-```js
-// tailwind.config.js
-
-module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    fontFamily: {
-      sans: ["Montserrat", "sans-serif"],
-      dharma": ["Dharma Gothic E"],
-    },
-    extend: {
-      colors: {
-        "pfb-deep-navy": "#00263E",
-        "pfb-bright-cyan": "#009EDB",
-        "pfb-bright-red": "#D71920",
-        "pfb-coal": "#4D4D4F",
-        "pfb-gray": "#8B8A8D",
-      },
-    },
-  },
-  plugins: [],
-};
-```
-
+Web projects will be built with [Next.js] using TypeScript
 #### Custom fonts
 
 PFB uses some custom private fonts that require some setup in order to be used.
@@ -289,9 +255,6 @@ Add the new `font-faces` to `styles/globals.css`:
 }
 ```
 
-A new custom font family is now available using the [Tailwind CSS] class
-`font-dharma`.
-
 #### Component Collections
 
 Here are the components collection that have been selected by the team:
@@ -316,43 +279,43 @@ Here are the components collection that have been selected by the team:
 
 [alive-progress]: https://github.com/rsalmei/alive-progress
 [axum]: https://github.com/tokio-rs/axum
-[aiohttp]: https://docs.aiohttp.org/en/stable/
+[aiohttp]: https://docs.aiohttp.org/en/stable
 [black]: https://github.com/psf/black
-[clap]: https://clap.rs/
+[clap]: https://clap.rs
 [color-eyre]: https://github.com/yaahc/color-eyre
-[furo]: https://pradyunsg.me/furo/
+[furo]: https://pradyunsg.me/furo
 [indicatif]: https://github.com/mitsuhiko/indicatif
-[invoke]: https://www.pyinvoke.org/
-[isort]: https://pycqa.github.io/isort/
+[invoke]: https://www.pyinvoke.org
+[isort]: https://pycqa.github.io/isort
 [loguru]: https://github.com/Delgan/loguru
 [markdownlint]: https://github.com/DavidAnson/markdownlint
-[myst-parser]: https://myst-parser.readthedocs.io/en/latest/
-[next.js]: https://nextjs.org
-[poetry]: https://python-poetry.org/
-[pydantic]: https://pydantic-docs.helpmanual.io/
+[myst-parser]: https://myst-parser.readthedocs.io/en/latest
+[next.js]: https://nextjs.org/docs
+[poetry]: https://python-poetry.org
+[pydantic]: https://pydantic-docs.helpmanual.io
 [pytest-cov]: https://github.com/pytest-dev/pytest-cov
-[pytest-mock]: https://github.com/pytest-dev/pytest-mock/
+[pytest-mock]: https://github.com/pytest-dev/pytest-mock
 [pytest-rerunfailures]: https://github.com/pytest-dev/pytest-rerunfailures
 [pytest-socket]: https://github.com/miketheman/pytest-socket
 [pytest-xdist]: https://github.com/pytest-dev/pytest-xdist
 [pytest]: https://docs.pytest.org/en/latest
-[react]: https://reactjs.org/
+[react]: https://reactjs.org
 [reqwest]: https://github.com/seanmonstar/reqwest
 [rich]: https://github.com/Textualize/rich
 [ruff]: https://github.com/charliermarsh/ruff
-[seaorm]: https://www.sea-ql.org/SeaORM/
-[serde]: https://serde.rs/
+[seaorm]: https://www.sea-ql.org/SeaORM
+[serde]: https://serde.rs
 [shellcheck]: https://github.com/koalaman/shellcheck
 [shfmt]: https://github.com/mvdan/sh
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 [sphinx-copybutton]: https://github.com/executablebooks/sphinx-copybutton
-[sphinx]: https://www.sphinx-doc.org/en/master/
+[sphinx]: https://www.sphinx-doc.org/en/master
 [sqlfluff]: https://docs.sqlfluff.com/en/stable/index.html
-[tailwind css]: https://tailwindcss.com/
-[tenacity]: https://tenacity.readthedocs.io/en/latest/
-[tracing.rs]: https://tracing.rs/tracing/
-[tokio]: https://tokio.rs/
-[typer]: https://typer.tiangolo.com/
+[tailwind css]: https://tailwindcss.com
+[tenacity]: https://tenacity.readthedocs.io/en/latest
+[tracing.rs]: https://tracing.rs/tracing
+[tokio]: https://tokio.rs
+[typer]: https://typer.tiangolo.com
 [xdoctest]: https://github.com/Erotemic/xdoctest
 
 <!-- Tooling -->
@@ -362,5 +325,5 @@ Here are the components collection that have been selected by the team:
 <!-- General links -->
 
 [peopleforbikes]: https://github.com/PeopleForBikes
-[python]: https://www.python.org/
-[rust]: https://www.rust-lang.org/
+[python]: https://www.python.org
+[rust]: https://www.rust-lang.org

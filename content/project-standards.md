@@ -278,13 +278,12 @@ Create the NextJS app:
 
 ```bash
 npx create-next-app@latest \
+  --app \
   --ts \
-  --tailwind \
   --eslint \
-  --experimental-app \
   --src-dir \
   --import-alias @/* \
-  --use pnpm \
+  --use-pnpm \
   "${PFB_REPO}"
 ```
 
