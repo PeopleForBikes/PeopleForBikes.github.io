@@ -230,7 +230,8 @@ poetry add -G dev \
 ## Web
 
 Web projects will be built with [Next.js] using [TypeScript]
-#### Custom fonts
+
+### Custom fonts
 
 PFB uses some custom private fonts that require some setup in order to be used.
 
@@ -311,7 +312,6 @@ Here are the components collection that have been selected by the team:
 [pytest-socket]: https://github.com/miketheman/pytest-socket
 [pytest-xdist]: https://github.com/pytest-dev/pytest-xdist
 [pytest]: https://docs.pytest.org/en/latest
-[react]: https://reactjs.org
 [reqwest]: https://github.com/seanmonstar/reqwest
 [rich]: https://github.com/Textualize/rich
 [ruff]: https://github.com/charliermarsh/ruff
