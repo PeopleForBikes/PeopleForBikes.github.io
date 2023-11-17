@@ -46,7 +46,7 @@ adopt [TypeScript], [Rust] and [Python].
 
 They are respectively used for the following use cases:
 
-- Web projects must be written in [TypeScript]
+- Web projects must be written in [TypeScript].
 - Projects dealing with data science or GIS must be written in [Python].
 - All other projects must be written in [Rust].
 
