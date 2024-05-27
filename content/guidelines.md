@@ -255,12 +255,14 @@ Add the new `font-faces` to `styles/globals.css`:
 
 @font-face {
   font-family: "Dharma Gothic E";
-  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf") format("opentype");
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf")
+    format("opentype");
 }
 
 @font-face {
   font-family: "Dharma Gothic E";
-  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf") format("opentype");
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf")
+    format("opentype");
 }
 ```
 

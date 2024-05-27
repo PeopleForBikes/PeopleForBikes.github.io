@@ -27,16 +27,15 @@ the repository of the project you are working on.
 - Commit messages should follow best practices, including explaining the context
   of the problem and how it was solved, including in caveats or follow up
   changes required. They should tell the story of the change and provide readers
-  understanding of what led to it. Please refer to [How to Write a Git Commit
-  Message] for more details.
-- If your [pull request] is a work in progress, create it as a [draft pull
-  request].
-- Any [pull request] inactive for 28 days will be automatically closed. If you
-  need more time to work on it, ask maintainers, to add the appropriate label to
-  it. Use the `@` mention in the comments.
-- Unless explicitly asked, [pull request] which don't pass all the CI checks
-  will not be reviewed. Use the `@` mention in the comments to ask maintainers
-  to help you.
+  understanding of what led to it. Please refer to [How to Write a Git
+  Commit Message] for more details.
+- If your [pull request] is a work in progress, create it as a [draft pull request].
+- Any [pull request] inactive for 28 days will be automatically closed. If you need
+  more time to work on it, ask maintainers, to add the appropriate label to it. Use
+  the `@` mention in the comments.
+- Unless explicitly asked, [pull request] which don't pass all the CI checks will
+  not be reviewed. Use the `@` mention in the comments to ask maintainers to help
+  you.
 
 ## Commit example
 
