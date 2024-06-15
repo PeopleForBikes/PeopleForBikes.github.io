@@ -159,8 +159,8 @@ type of work being done:
 
 Default: [MIT]
 
-For most substantial [BNA Mechanics] open source software projects, there's a
-simple default answer: [MIT].
+For most substantial [BNA Mechanics] open source software projects, there's a simple
+default answer: [MIT].
 
 [MIT] is the
 [most popular license](https://github.com/blog/1964-open-source-license-usage-on-github-com)
@@ -272,24 +272,23 @@ the right license for those cases? Let's talk with [the team].
 
 ### Versioning
 
-- Assets and should be versioned when applicable. For instance, it is common to
-  go through several iterations for a `template`. In this case we follow the
-  [calver] specification with the `vYY.Minor` scheme, where:
+- Assets should alway be versioned, following the [calver] specification with
+  the `[v]YY.0M[.Minor]` scheme, where:
 
-  - The letter "v" (for "version") precedes the scheme
+  - The letter "v" (for "version") precedes the scheme (optional).
   - `YY` represents the year with 2 digits (e.g.: 22 for 2022)
+  - `0M` represents the zero-padded month of the year (e.g.: 01, 02, 11, 12)
   - `Minor` represents the iteration number starting at one (1), without
-    zero-padding (e.g: 1, 2, 10, etc.)
+    zero-padding (e.g: 1, 2, 10, etc.). It must be omitted when it is equal to
+    zero (0).
 
-  - Examples:
+  For instance, it is common to go through several iterations for a `template`,
+  or several revisions of a document throughout the year:
 
-    - v21.17
-    - v22.4
-
-#### Examples
-
-- template-scorecard-v22.4.svg
-- city_ratings_v22.7.csv
+  - template-scorecard-v22.05.4.svg
+  - city_ratings_v22.11.csv
+  - chicago_illinois-scorecard-v24.05.pdf
+  - chicago_illinois-scorecard-v24.05.3.pdf
 
 ### Visual assets
 
