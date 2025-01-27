@@ -83,9 +83,14 @@ and natural to build high quality deliverables.
     example of how to automate maintenance tasks.
   - Non trivial commands must be backed by scripts (instead of being written
     inline).
-- Start designing API specification before implementation (i.e. design first
+- Implement REST APIs from business requirements, and document them using the
+  [OpenAPI 3+ specification](https://swagger.io/specification/) (i.e. code first
   approach)
-  - Use the [OpenAPI 3+ specification](https://swagger.io/specification/)
+  - Generate the [OpenAPI 3+ specification] from the server
+  - Generate the clients from the [OpenAPI 3+ specification] for any language
+    needed.
+    - Clients must be 100% generated, although they might be **extended** if
+      needed.
 
 ### Continuous Integration
 
@@ -159,8 +164,8 @@ type of work being done:
 
 Default: [MIT]
 
-For most substantial [BNA Mechanics] open source software projects, there's a simple
-default answer: [MIT].
+For most substantial [BNA Mechanics] open source software projects, there's a
+simple default answer: [MIT].
 
 [MIT] is the
 [most popular license](https://github.com/blog/1964-open-source-license-usage-on-github-com)
@@ -422,7 +427,7 @@ Initialize the project, depending on the programming language:
 
 - Rust: `cargo init`
 - Python:
-  `poetry init --name "${PFB_REPO}" --description "${PFB_REPO_DESCRIPTION}"`
+  `uv init --name "${PFB_REPO}" --description "${PFB_REPO_DESCRIPTION}"`
 
 Add a `README.md` and the appropriate `.gitignore` file:
 
@@ -513,8 +518,9 @@ gh repo archive -y
 
 [bna mechanics]: https://peopleforbikes.github.io
 [calver]: https://calver.org/
-[cc0-1.0]: https://choosealicense.com/licenses/cc0-1.0/
 [cc-by-4.0]: https://creativecommons.org/licenses/by/4.0/deed.en
+[cc0-1.0]: https://choosealicense.com/licenses/cc0-1.0/
 [github]: http://github.com
 [mit]: https://choosealicense.com/licenses/mit/
+[openapi 3+ specification]: https://swagger.io/specification/
 [the team]: mailto:research@peopleforbikes.org
