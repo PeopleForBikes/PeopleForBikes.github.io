@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contributing | BNA Mechanics </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <style>
+  :root {
+    /* Body fonts */
+    --fonts-body: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    /* Headline fonts */
+    --fonts-headlines: "Dharma Gothic E";
+    /* Primary theme color */
+    --primary-color: #00263E;
+    /* Primary theme text color */
+    --primary-text-color: #8B8A8D;
+    /* Primary theme link color */
+    --primary-link-color: #009EDB;
+    /* Secondary color: the background body color */
+    --secondary-color: #fcfaf6;
+    --secondary-text-color: #4D4D4F;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #D71920;
+  }
+</style>
+
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:Light,400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="https://peopleforbikes.github.io/juice.css">
+</head>
+
+<body>
+  
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;">
+    <div class="logo">
+        <img src="https://peopleforbikes.github.io/BNA Mechanics logo-small.svg" alt="logo">
+        BNA Mechanics
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;code-of-conduct&#x2F;">Code of conduct</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;contributing&#x2F;">Contributing</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;standards&#x2F;">Standards</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;guidelines&#x2F;">Guidelines</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;PeopleForBikes">Github ↗</a>
+        
+    
+</nav>
+
+</header>
+
+
+  <main id="main">
+    
+    
+    
+    
+    
+    <div class="toc">
+      <div class="toc-sticky">
+        
+        <div class="toc-item">
+          <a class="subtext" href="https://peopleforbikes.github.io/contributing/#contributing">Contributing</a>
+        </div>
+        
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/contributing/#guidelines"><small>- Guidelines</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/contributing/#commit-example"><small>- Commit example</small></a>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+
+    <div class="content text">
+      
+<div class="heading-text"></div>
+<h1 id="contributing">Contributing</h1>
+<h2 id="guidelines">Guidelines</h2>
+<p>These guidelines are general ones that apply globally to all
+<a href="https://github.com/PeopleForBikes/">PeopleForBikes</a> projects.</p>
+<p>However it is possible that individual projects have different or more specific
+recommendations. If there is one, always refer to the <code>CONTRIBUTING.md</code> file in
+the repository of the project you are working on.</p>
+<ul>
+<li>Use the provided templates to file an <a href="https://github.com/PeopleForBikes/project/issues/new/choose">issue</a> or a <a href="https://github.com/PeopleForBikes/project/pulls">pull request</a>.</li>
+<li>Create a topic branch from where you want to base your work.</li>
+<li>Format the files properly. Please use the dedicated task runner if any.</li>
+<li>If applicable, add some tests to validate your changes and ensure nothing else
+was accidentally broken.</li>
+<li>Commit messages must start with a capitalized and short summary (max. 50
+chars) written in the imperative, followed by an optional, more detailed
+explanatory text which is separated from the summary by an empty line.</li>
+<li>Commit messages should follow best practices, including explaining the context
+of the problem and how it was solved, including in caveats or follow up
+changes required. They should tell the story of the change and provide readers
+understanding of what led to it. Please refer to <a href="http://chris.beams.io/posts/git-commit">How to Write a Git Commit
+Message</a> for more details.</li>
+<li>If your <a href="https://github.com/PeopleForBikes/project/pulls">pull request</a> is a work in progress, create it as a <a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/">draft pull
+request</a>.</li>
+<li>Any <a href="https://github.com/PeopleForBikes/project/pulls">pull request</a> inactive for 28 days will be automatically closed. If you
+need more time to work on it, ask maintainers, to add the appropriate label to
+it. Use the <code>@</code> mention in the comments.</li>
+<li>Unless explicitly asked, <a href="https://github.com/PeopleForBikes/project/pulls">pull request</a> which don't pass all the CI checks
+will not be reviewed. Use the <code>@</code> mention in the comments to ask maintainers
+to help you.</li>
+</ul>
+<h2 id="commit-example">Commit example</h2>
+<pre data-lang="COMMIT_EDITMSG" style="background-color:#ffffff;color:#323232;" class="language-COMMIT_EDITMSG "><code class="language-COMMIT_EDITMSG" data-lang="COMMIT_EDITMSG"><span>Use Docker Hub build environment values
+</span><span>
+</span><span>Uses the Docker Hub build environment values in order to ensure the
+</span><span>correct version of ScrAPD is installed into the image.
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">Fixes </span><span style="color:#0086b3;">scrapd/scrapd#54
+</span></code></pre>
+<p>The following commit is a good example as:</p>
+<ol>
+<li>The fist line is a short description and starts with an imperative verb.</li>
+<li>The first paragraph describes why this commit may be useful.</li>
+<li>The last line points to an existing issue and will automatically close it.</li>
+</ol>
+
+
+    </div>
+
+    
+    
+  </main>
+
+  
+<footer>
+  <small class="subtext">
+    Created by <a href="https://www.peopleforbikes.org/">PeopleForBikes</a>
+  </small>
+</footer>
+
+</body>
+<script>
+  function highlightNav(heading) {
+    let pathname = location.pathname;
+    document.querySelectorAll(".toc a").forEach((item) => {
+      item.classList.remove("active");
+    });
+    document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+  }
+
+  let currentHeading = "";
+  window.onscroll = function () {
+    let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+    let elementArr = [];
+
+    h.forEach(item => {
+      if (item.id !== "") {
+        elementArr[item.id] = item.getBoundingClientRect().top;
+      }
+    });
+    elementArr.sort();
+    for (let key in elementArr) {
+      if (!elementArr.hasOwnProperty(key)) {
+        continue;
+      }
+      if (elementArr[key] > 0 && elementArr[key] < 300) {
+        if (currentHeading !== key) {
+          highlightNav(key);
+          currentHeading = key;
+        }
+        break;
+      }
+    }
+  }
+</script>
+
+</html>

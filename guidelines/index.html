@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Guidelines | BNA Mechanics </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <style>
+  :root {
+    /* Body fonts */
+    --fonts-body: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    /* Headline fonts */
+    --fonts-headlines: "Dharma Gothic E";
+    /* Primary theme color */
+    --primary-color: #00263E;
+    /* Primary theme text color */
+    --primary-text-color: #8B8A8D;
+    /* Primary theme link color */
+    --primary-link-color: #009EDB;
+    /* Secondary color: the background body color */
+    --secondary-color: #fcfaf6;
+    --secondary-text-color: #4D4D4F;
+    /* Highlight text color of table of content */
+    --toc-highlight-text-color: #D71920;
+  }
+</style>
+
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:Light,400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="https://peopleforbikes.github.io/juice.css">
+</head>
+
+<body>
+  
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;">
+    <div class="logo">
+        <img src="https://peopleforbikes.github.io/BNA Mechanics logo-small.svg" alt="logo">
+        BNA Mechanics
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;code-of-conduct&#x2F;">Code of conduct</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;contributing&#x2F;">Contributing</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;standards&#x2F;">Standards</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;peopleforbikes.github.io&#x2F;guidelines&#x2F;">Guidelines</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;PeopleForBikes">Github ↗</a>
+        
+    
+</nav>
+
+</header>
+
+
+  <main id="main">
+    
+    
+    
+    
+    
+    <div class="toc">
+      <div class="toc-sticky">
+        
+        <div class="toc-item">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#tooling-and-library-guidelines">Tooling and library guidelines</a>
+        </div>
+        
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#goals"><small>- Goals</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#languages"><small>- Languages</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#general-concepts"><small>- General Concepts</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#rest-apis"><small>- REST APIs</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#python"><small>- Python</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#markdown"><small>- Markdown</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#rust"><small>- Rust</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#shell"><small>- Shell</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#sql"><small>- SQL</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#tooling"><small>- Tooling</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+          <a class="subtext" href="https://peopleforbikes.github.io/guidelines/#web"><small>- Web</small></a>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+
+    <div class="content text">
+      
+<div class="heading-text"></div>
+<h1 id="tooling-and-library-guidelines">Tooling and library guidelines</h1>
+<h2 id="goals">Goals</h2>
+<h3 id="consistency">Consistency</h3>
+<p>We want to ensure consistency in the tools and libraries used for the
+<a href="https://github.com/PeopleForBikes">PeopleForBikes</a> projects.</p>
+<p>Ideally a contributor working on one project should be familiar enough with the
+tools and libraries to be able to fix bugs or implement features in another one.</p>
+<h3 id="removing-choice-fatigue">Removing choice fatigue</h3>
+<p>We aim at preventing choice fatigue by working with tools and libraries that we
+already battle tested.</p>
+<p>For instance a contributor looking to implement some logging in a new project
+should not spend a day or two researching and evaluating libraries, but should
+instead refer to this guide to pick the one we recommend.</p>
+<h3 id="limiting-dependency-proliferation">Limiting dependency proliferation</h3>
+<p>Limiting the amount of third-party software you rely on reduces the surface of
+attacks you may be vulnerable to.</p>
+<p>Here as an example, are just a couple of impactful events that happen within
+recent years:</p>
+<ul>
+<li><a href="https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/">Malicious code found in npm package event-stream</a></li>
+<li><a href="https://www.cpomagazine.com/cyber-security/open-source-developer-intentionally-corrupts-npm-libraries-suspected-hack-turns-out-to-be-mischief/">Open Source Developer Intentionally Corrupts NPM Libraries</a></li>
+<li><a href="https://www.securityweek.com/github-confirms-another-major-npm-security-defect">GitHub Confirms Another Major NPM Security Defect</a></li>
+</ul>
+<h2 id="languages">Languages</h2>
+<p>Like dependencies, we try to reduce the amount of general-purpose programming
+languages we use for <a href="https://github.com/PeopleForBikes">PeopleForBikes</a> projects, therefore we decided to only
+adopt <a href="https://www.typescriptlang.org">TypeScript</a>, <a href="https://www.rust-lang.org">Rust</a> and <a href="https://www.python.org">Python</a>.</p>
+<p>They are respectively used for the following use cases:</p>
+<ul>
+<li>Web projects must be written in <a href="https://www.typescriptlang.org">TypeScript</a>.</li>
+<li>Projects dealing with data science or GIS must be written in <a href="https://www.python.org">Python</a>.</li>
+<li>All other projects must be written in <a href="https://www.rust-lang.org">Rust</a>.</li>
+</ul>
+<h2 id="general-concepts">General Concepts</h2>
+<p>These are general concepts that we attempt to abide to in the <a href="https://github.com/PeopleForBikes">PeopleForBikes</a>
+projects.</p>
+<ul>
+<li>Recommended libraries are not set in stone
+<ul>
+<li>Possible to add libraries if they meet pre-defined criteria
+<ul>
+<li>Active project
+<ul>
+<li>Response to issues, PR within a reasonable timeframe (1-2 weeks)</li>
+<li>At least one commit within the past 6 months</li>
+</ul>
+</li>
+<li>No known vulnerabilities</li>
+<li>Well enough documented
+<ul>
+<li>i.e. no tribal knowledge required to use them</li>
+</ul>
+</li>
+<li>Solve a problem</li>
+</ul>
+</li>
+<li>Replacing/Removing a library is possible too
+<ul>
+<li>Propose a new valid alternative</li>
+<li>Propose a replacement and/or deprecation strategy
+<ul>
+<li>e.g. not all projects need to migrate, only new and very active ones</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use linters with default configurations
+<ul>
+<li>Unless there is an absolute need for a change</li>
+</ul>
+</li>
+</ul>
+<h2 id="rest-apis">REST APIs</h2>
+<ul>
+<li>We try to follow the <a href="https://docs.github.com/en/rest">GitHub REST API</a> documentation and the <a href="https://jsonapi.org/">jsonapi.org</a>
+specification for error management.</li>
+<li>Zalando provides very good
+<a href="https://opensource.zalando.com/restful-api-guidelines/">RESTful API Guidelines</a>
+worth following</li>
+</ul>
+<h2 id="python">Python</h2>
+<h3 id="project-management">Project management</h3>
+<ul>
+<li><a href="https://docs.astral.sh/uv/">uv</a>: The future of Python project management</li>
+</ul>
+<p>We recommend using <a href="https://github.com/casey/just">just</a> for managing administration tasks, but for more
+complex scenarios <a href="https://www.pyinvoke.org">invoke</a> is an acceptable replacement.</p>
+<h3 id="pyproject-toml">pyproject.toml</h3>
+<p>Describes special sections to add to the <code>pyproject.toml</code> configuration file.</p>
+<h4 id="coverage">coverage</h4>
+<p>Leaves some files out the measurements.</p>
+<pre data-lang="toml" style="background-color:#ffffff;color:#323232;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[tool.coverage.run]
+</span><span style="color:#63a35c;">omit </span><span>= [</span><span style="color:#183691;">&quot;*/__init__.py&quot;</span><span>]
+</span></code></pre>
+<h4 id="isort">isort</h4>
+<p>Enables the compatibility with <code>black</code> while shaping the import as a grid where
+each import has its own line.</p>
+<pre data-lang="toml" style="background-color:#ffffff;color:#323232;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[tool.isort]
+</span><span style="color:#63a35c;">profile </span><span>= </span><span style="color:#183691;">&quot;black&quot;
+</span><span style="color:#63a35c;">force_grid_wrap </span><span>= </span><span style="color:#0086b3;">2
+</span></code></pre>
+<h4 id="pytest">pytest</h4>
+<p>Removes the warnings, configures the code coverage report and run the doctests
+with <a href="https://github.com/Erotemic/xdoctest">xdoctest</a>.</p>
+<pre data-lang="toml" style="background-color:#ffffff;color:#323232;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[tool.pytest.ini_options]
+</span><span style="color:#63a35c;">minversion </span><span>= </span><span style="color:#183691;">&quot;6.0&quot;
+</span><span style="color:#63a35c;">addopts </span><span>= </span><span style="color:#183691;">&quot;-p no:warnings --cov-report term-missing --cov-report html --xdoctest&quot;
+</span></code></pre>
+<h3 id="initialization">Initialization</h3>
+<p>To quickly start a project, run the following commands:</p>
+<pre data-lang="bash" style="background-color:#ffffff;color:#323232;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="font-weight:bold;color:#a71d5d;">export </span><span>PYTHON_PROJECT</span><span style="font-weight:bold;color:#a71d5d;">=</span><span style="color:#183691;">my-project
+</span><span>uv init ${PYTHON_PROJECT}
+</span><span style="color:#62a35c;">cd </span><span>${PYTHON_PROJECT}
+</span><span>uv add --dev \
+</span><span>  bpython \
+</span><span>  furo\
+</span><span>  isort \
+</span><span>  myst-parser \
+</span><span>  pytest \
+</span><span>  pytest-cov \
+</span><span>  pytest-mock \
+</span><span>  pytest-rerunfailures \
+</span><span>  pytest-socket \
+</span><span>  pytest-xdist \
+</span><span>  ruff \
+</span><span>  Sphinx\
+</span><span>  sphinx-autobuild \
+</span><span>  sphinx-copybutton \
+</span><span>  xdoctest
+</span></code></pre>
+<h3 id="legacy">Legacy</h3>
+<ul>
+<li><a href="https://python-poetry.org">poetry</a>: Python project management de facto standard
+<ul>
+<li>This project was replaced by the team in January 2025.</li>
+</ul>
+</li>
+</ul>
+<h3 id="libraries">Libraries</h3>
+<h4 id="production">Production</h4>
+<ul>
+<li><a href="https://docs.aiohttp.org/en/stable/">aiohttp</a>: asynchronous HTTP Client/Server</li>
+<li><a href="https://github.com/rsalmei/alive-progress">alive-progress</a>: progress reporting</li>
+<li><a href="https://github.com/Delgan/loguru">loguru</a>: logging made (stupidly) simple</li>
+<li><a href="https://pydantic-docs.helpmanual.io">pydantic</a>: models, settings and automated serialization/deserialization</li>
+<li><a href="https://github.com/Textualize/rich">rich</a>: rich text and beautiful formatting in the terminal</li>
+<li><a href="https://tenacity.readthedocs.io/en/latest">tenacity</a>: advanced retry library</li>
+<li><a href="https://typer.tiangolo.com">typer</a>: CLI made easy</li>
+</ul>
+<h4 id="linting">Linting</h4>
+<ul>
+<li><a href="https://pycqa.github.io/isort">isort</a>: sorts your imports</li>
+<li><a href="https://github.com/charliermarsh/ruff">ruff</a>: an extremely fast Python linter and formatter , written in Rust</li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li><a href="https://pradyunsg.me/furo">furo</a>: a clean customizable Sphinx documentation theme.</li>
+<li><a href="https://myst-parser.readthedocs.io/en/latest">myst-parser</a>: extend Sphinx with the power of markdown</li>
+<li><a href="https://www.sphinx-doc.org/en/master">sphinx</a>: beautiful documentation made easy</li>
+<li><a href="https://github.com/executablebooks/sphinx-autobuild">sphinx-autobuild</a>: hot reloading for Sphinx</li>
+<li><a href="https://github.com/executablebooks/sphinx-copybutton">sphinx-copybutton</a>: s small sphinx extension to add a "copy" button to code
+blocks</li>
+</ul>
+<h4 id="testing">Testing</h4>
+<ul>
+<li><a href="https://docs.pytest.org/en/latest">pytest</a>: python test framework</li>
+<li><a href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a>: code coverage plugin</li>
+<li><a href="https://github.com/pytest-dev/pytest-mock">pytest-mock</a>: mock plugin</li>
+<li><a href="https://github.com/pytest-dev/pytest-rerunfailures">pytest-rerunfailures</a>: retry plugins (used only for integration/feature
+tests)</li>
+<li><a href="https://github.com/miketheman/pytest-socket">pytest-socket</a>: prevents all network call from the tests</li>
+<li><a href="https://github.com/pytest-dev/pytest-xdist">pytest-xdist</a>: run the unit tests in parallel</li>
+<li><a href="https://github.com/Erotemic/xdoctest">xdoctest</a>: better doctest</li>
+</ul>
+<h2 id="markdown">Markdown</h2>
+<ul>
+<li><a href="https://github.com/DavidAnson/markdownlint">markdownlint</a>: markdown linter</li>
+</ul>
+<h2 id="rust">Rust</h2>
+<h3 id="libraries-1">Libraries</h3>
+<ul>
+<li><a href="https://github.com/tokio-rs/axum">axum</a>: asynchronous HTTP server framework</li>
+<li><a href="https://github.com/yaahc/color-eyre">color-eyre</a>: error report handler</li>
+<li><a href="https://clap.rs/">clap</a>: elegant CLI</li>
+<li><a href="https://github.com/chronotope/chrono">chrono</a>: full-featured datetime library</li>
+<li><a href="https://github.com/mitsuhiko/indicatif">indicatif</a>: progress reporting</li>
+<li><a href="https://github.com/oxidecomputer/progenitor">progenitor</a>: OpenAPI client generator</li>
+<li><a href="https://github.com/seanmonstar/reqwest">reqwest</a>: asynchronous HTTP client</li>
+<li><a href="https://serde.rs">serde</a>: serialization/deserialization framework</li>
+<li><a href="https://www.sea-ql.org/SeaORM">seaorm</a>: async &amp; dynamic ORM</li>
+<li><a href="https://tokio.rs">tokio</a>: asynchronous runtime</li>
+<li><a href="https://tracing.rs/tracing">tracing.rs</a>: a scoped, structured logging and diagnostics system</li>
+<li><a href="https://github.com/juhaku/utoipa">utoipa</a>: simple, fast, code first and compile time generated OpenAPI
+documentation</li>
+</ul>
+<h2 id="shell">Shell</h2>
+<ul>
+<li><a href="https://github.com/koalaman/shellcheck">shellcheck</a>: shell linter</li>
+<li><a href="https://github.com/mvdan/sh">shfmt</a>: shell formatter</li>
+</ul>
+<h2 id="sql">SQL</h2>
+<ul>
+<li><a href="https://docs.sqlfluff.com/en/stable/index.html">sqlfluff</a>: SQL linter and formatter</li>
+</ul>
+<h2 id="tooling">Tooling</h2>
+<ul>
+<li><a href="https://github.com/casey/just">just</a>: general purpose task runner</li>
+<li><a href="https://github.com/sharkdp/hyperfine">hyperfine</a>: benchmark compiled binaries</li>
+</ul>
+<h2 id="web">Web</h2>
+<p>Web projects will be built with <a href="https://nextjs.org/docs">Next.js</a> using <a href="https://www.typescriptlang.org">TypeScript</a></p>
+<h3 id="custom-fonts">Custom fonts</h3>
+<p>PFB uses some custom private fonts that require some setup in order to be used.</p>
+<p>First, copy the font files into the <code>public/fonts</code> folder of the web project.
+The font are available in the
+<a href="https://github.com/PeopleForBikes/brokenspoke/tree/main/assets/fonts/DharmaGothicExtended">Brokenspoke repository</a>.</p>
+<p>The folders should look like this:</p>
+<pre data-lang="bash" style="background-color:#ffffff;color:#323232;" class="language-bash "><code class="language-bash" data-lang="bash"><span>public
+</span><span>├── fonts
+</span><span>│   ├── Dharma Type - DharmaGothicE-Bold.otf
+</span><span>│   └── Dharma Type - DharmaGothicE-Light.otf
+</span></code></pre>
+<p>Add the new <code>font-faces</code> to <code>styles/globals.css</code>:</p>
+<pre data-lang="css" style="background-color:#ffffff;color:#323232;" class="language-css "><code class="language-css" data-lang="css"><span>// styles/globals.</span><span style="color:#795da3;">css
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">@font-face </span><span>{
+</span><span>  </span><span style="color:#0086b3;">font-family</span><span>: </span><span style="color:#183691;">&quot;Dharma Gothic E&quot;</span><span>;
+</span><span>  </span><span style="color:#0086b3;">src</span><span>: url(</span><span style="color:#183691;">&quot;../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf&quot;</span><span>) format(</span><span style="color:#183691;">&quot;opentype&quot;</span><span>);
+</span><span>}
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">@font-face </span><span>{
+</span><span>  </span><span style="color:#0086b3;">font-family</span><span>: </span><span style="color:#183691;">&quot;Dharma Gothic E&quot;</span><span>;
+</span><span>  </span><span style="color:#0086b3;">src</span><span>: url(</span><span style="color:#183691;">&quot;../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf&quot;</span><span>) format(</span><span style="color:#183691;">&quot;opentype&quot;</span><span>);
+</span><span>}
+</span></code></pre>
+<h4 id="component-collections">Component Collections</h4>
+<p>Here are the components collection that have been selected by the team:</p>
+<ul>
+<li><a href="https://flowbite.com/">https://flowbite.com/</a></li>
+<li><a href="https://kitwind.io/products/kometa/components">https://kitwind.io/products/kometa/components</a></li>
+<li><a href="https://merakiui.com/">https://merakiui.com/</a></li>
+<li><a href="https://tailblocks.cc/">https://tailblocks.cc/</a></li>
+<li><a href="https://tailwind-elements.com/">https://tailwind-elements.com/</a></li>
+<li><a href="https://tailwindcomponents.com/">https://tailwindcomponents.com/</a></li>
+<li><a href="https://tailwindcss.com/docs/installation">https://tailwindcss.com/docs/installation</a></li>
+<li><a href="https://tailwindtemplates.io/templates">https://tailwindtemplates.io/templates</a></li>
+<li><a href="https://www.mambaui.com/">https://www.mambaui.com/</a></li>
+<li><a href="https://www.tailwind-kit.com/">https://www.tailwind-kit.com/</a></li>
+<li><a href="https://www.tailwindtoolbox.com/">https://www.tailwindtoolbox.com/</a></li>
+</ul>
+<h4 id="helpers">Helpers</h4>
+<ul>
+<li><a href="https://tailwindcomponents.com/cheatsheet/">https://tailwindcomponents.com/cheatsheet/</a></li>
+</ul>
+<!-- API links -->
+<!-- Dependency links -->
+<!-- Tooling -->
+<!-- General links -->
+
+
+    </div>
+
+    
+    
+  </main>
+
+  
+<footer>
+  <small class="subtext">
+    Created by <a href="https://www.peopleforbikes.org/">PeopleForBikes</a>
+  </small>
+</footer>
+
+</body>
+<script>
+  function highlightNav(heading) {
+    let pathname = location.pathname;
+    document.querySelectorAll(".toc a").forEach((item) => {
+      item.classList.remove("active");
+    });
+    document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+  }
+
+  let currentHeading = "";
+  window.onscroll = function () {
+    let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+    let elementArr = [];
+
+    h.forEach(item => {
+      if (item.id !== "") {
+        elementArr[item.id] = item.getBoundingClientRect().top;
+      }
+    });
+    elementArr.sort();
+    for (let key in elementArr) {
+      if (!elementArr.hasOwnProperty(key)) {
+        continue;
+      }
+      if (elementArr[key] > 0 && elementArr[key] < 300) {
+        if (currentHeading !== key) {
+          highlightNav(key);
+          currentHeading = key;
+        }
+        break;
+      }
+    }
+  }
+</script>
+
+</html>
