@@ -10,8 +10,8 @@ for the bike industry working to make bicycling safe, convenient, and fun for
 people of all ages and abilities. The [Bicycle Network Analysis], a.k.a. the
 BNA, is open source software that assesses the quality and connectivity of bike
 networks in cities. The [BNA] is an integral part of PeopleForBikes’ [City
-Ratings] program, which measures progress towards building great cities for bikes,
-shares best practices, and engages more people in bike advocacy.
+Ratings] program, which measures progress towards building great cities for
+bikes, shares best practices, and engages more people in bike advocacy.
 
 **BNA Mechanics** is the technical group developing the [BNA]. We aim to
 simplify and automate tasks to help our advocates focus on what they do best:

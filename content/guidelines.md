@@ -71,12 +71,10 @@ projects.
 - Use linters with default configurations
   - Unless there is an absolute need for a change
 
-## APIs
+## REST APIs
 
-- We follow the [jsonapi.org] specification.
-- When in doubt, or if something is unclear in the [jsonapi.org] specification,
-  refer to the [GitHub REST API] documentation for a well thought real life
-  example.
+- We try to follow the [GitHub REST API] documentation and the [jsonapi.org]
+  specification for error management.
 - Zalando provides very good
   [RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
   worth following
@@ -85,18 +83,10 @@ projects.
 
 ### Project management
 
-- [poetry]: Python project management de facto standard
+- [uv]: The future of Python project management
 
 We recommend using [just] for managing administration tasks, but for more
 complex scenarios [invoke] is an acceptable replacement.
-
-### Poetry settings
-
-Each project must create a local virtual environment at its root :
-
-```bash
-poetry config virtualenvs.in-project true --local
-```
 
 ### pyproject.toml
 
@@ -138,10 +128,10 @@ addopts = "-p no:warnings --cov-report term-missing --cov-report html --xdoctest
 To quickly start a project, run the following commands:
 
 ```bash
-export POETRY_PROJECT=my-project
-poetry new ${POETRY_PROJECT}
-cd ${POETRY_PROJECT}
-poetry add -G dev \
+export PYTHON_PROJECT=my-project
+uv init ${PYTHON_PROJECT}
+cd ${PYTHON_PROJECT}
+uv add --dev \
   bpython \
   furo\
   isort \
@@ -158,6 +148,11 @@ poetry add -G dev \
   sphinx-copybutton \
   xdoctest
 ```
+
+### Legacy
+
+- [poetry]: Python project management de facto standard
+  - This project was replaced by the team in January 2025.
 
 ### Libraries
 
@@ -207,12 +202,16 @@ poetry add -G dev \
 - [axum]: asynchronous HTTP server framework
 - [color-eyre]: error report handler
 - [clap]: elegant CLI
+- [chrono]: full-featured datetime library
 - [indicatif]: progress reporting
+- [progenitor]: OpenAPI client generator
 - [reqwest]: asynchronous HTTP client
 - [serde]: serialization/deserialization framework
 - [seaorm]: async & dynamic ORM
 - [tokio]: asynchronous runtime
 - [tracing.rs]: a scoped, structured logging and diagnostics system
+- [utoipa]: simple, fast, code first and compile time generated OpenAPI
+  documentation
 
 ## Shell
 
@@ -225,7 +224,8 @@ poetry add -G dev \
 
 ## Tooling
 
-- [just]: General purpose task runner
+- [just]: general purpose task runner
+- [hyperfine]: benchmark compiled binaries
 
 ## Web
 
@@ -255,14 +255,12 @@ Add the new `font-faces` to `styles/globals.css`:
 
 @font-face {
   font-family: "Dharma Gothic E";
-  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf")
-    format("opentype");
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExBold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Dharma Gothic E";
-  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf")
-    format("opentype");
+  src: url("../public/fonts/Dharma Type - DharmaGothicE-ExLight.otf") format("opentype");
 }
 ```
 
@@ -298,6 +296,7 @@ Here are the components collection that have been selected by the team:
 [aiohttp]: https://docs.aiohttp.org/en/stable/
 [clap]: https://clap.rs/
 [color-eyre]: https://github.com/yaahc/color-eyre
+[chrono]: https://github.com/chronotope/chrono
 [furo]: https://pradyunsg.me/furo
 [indicatif]: https://github.com/mitsuhiko/indicatif
 [invoke]: https://www.pyinvoke.org
@@ -307,6 +306,7 @@ Here are the components collection that have been selected by the team:
 [myst-parser]: https://myst-parser.readthedocs.io/en/latest
 [next.js]: https://nextjs.org/docs
 [poetry]: https://python-poetry.org
+[progenitor]: https://github.com/oxidecomputer/progenitor
 [pydantic]: https://pydantic-docs.helpmanual.io
 [pytest-cov]: https://github.com/pytest-dev/pytest-cov
 [pytest-mock]: https://github.com/pytest-dev/pytest-mock
@@ -330,11 +330,14 @@ Here are the components collection that have been selected by the team:
 [tokio]: https://tokio.rs
 [typer]: https://typer.tiangolo.com
 [typescript]: https://www.typescriptlang.org
+[uv]: https://docs.astral.sh/uv/
+[utoipa]: https://github.com/juhaku/utoipa
 [xdoctest]: https://github.com/Erotemic/xdoctest
 
 <!-- Tooling -->
 
 [just]: https://github.com/casey/just
+[hyperfine]: https://github.com/sharkdp/hyperfine
 
 <!-- General links -->
 
